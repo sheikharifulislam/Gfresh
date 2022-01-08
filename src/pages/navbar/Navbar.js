@@ -9,7 +9,7 @@ const Navbar = () => {
                 <div className="brand-logo">
                     <NavLink to="/" className="logo">
                         <i className="fas fa-shopping-basket"></i>
-                        groco
+                        GFresh
                     </NavLink>
                 </div>
                 <div className="menu">

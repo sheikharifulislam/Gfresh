@@ -18,6 +18,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 90%;
+  margin: 0 auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

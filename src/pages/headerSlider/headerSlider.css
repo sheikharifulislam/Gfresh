@@ -3,16 +3,10 @@
   height: 520px;
   padding-top: 80px;
   margin-top: 86px;
-  background-image: url("../../image/home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   overflow: hidden;
-}
-
-.slides-container {
-  width: 80%;
-  margin: 0 auto;
 }
 
 .slide {

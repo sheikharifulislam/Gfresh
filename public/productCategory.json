@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "categoryName": "Rice",
+        "categoryImage": "image/category_rice.png"
+    },
+    {
+        "id": "2",
+        "categoryName": "Meat",
+        "categoryImage": "image/category_meat.png"
+    },
+    {
+        "id": "3",
+        "categoryName": "Vegetables",
+        "categoryImage": "image/category_vegetables.png"
+    },
+    {
+        "id": "4",
+        "categoryName": "Edible Oil",
+        "categoryImage": "image/category_edible_oil.jpg"
+    },
+    {
+        "id": "5",
+        "categoryName": "Pulses",
+        "categoryImage": "image/category_pulses.jpg"
+    },
+    {
+        "id": "6",
+        "categoryName": "Spices",
+        "categoryImage": "image/category_spices.jpg"
+    },
+    {
+        "id": "7",
+        "categoryName": "Fish",
+        "categoryImage": "image/category_fish.jpg"
+    },
+    {
+        "id": "8",
+        "categoryName": "Mustard Oil",
+        "categoryImage": "image/category_Mustard Oil.jpg"
+    },
+    {
+        "id": "9",
+        "categoryName": "Milk",
+        "categoryImage": "image/category_milk.png"
+    },
+    {
+        "id": "10",
+        "categoryName": "Pickles",
+        "categoryImage": "image/category_pickles.jpg"
+    },
+    {
+        "id": "11",
+        "categoryName": "Nuts",
+        "categoryImage": "image/category_nuts.jpg"
+    },
+    {
+        "id": "12",
+        "categoryName": "Raisins",
+        "categoryImage": "image/category_raisins.jpg"
+    },
+    {
+        "id": "13",
+        "categoryName": "Fruit",
+        "categoryImage": "image/category_fruit.jpg"
+    },
+    {
+        "id": "14",
+        "categoryName": "Cold Drink",
+        "categoryImage": "image/category_cold.jpg"
+    }   
+]

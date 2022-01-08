@@ -1,0 +1,82 @@
+#header-banner {
+  padding: 40px 0;
+}
+
+.banner-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.banner {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.banner-content h3 {
+  font-size: 26px;
+  color: #000;
+}
+
+.banner-content p {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.banner-content #banner-shop-btn {
+  display: inlline-block;
+  padding: 9px 12px;
+  background-color: #27ae60;
+  color: #fff;
+  outline: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.banner-content #banner-shop-btn:hover {
+  background-color: #2c2c54;
+}
+
+.banner:hover .banner-image img {
+  cursor: pointer;
+  transform: scale(1.2) rotate(-10deg);
+  -webkit-transform: scale(1.2) rotate(-10deg);
+  -moz-transform: scale(1.2) rotate(-10deg);
+  -ms-transform: scale(1.2) rotate(-10deg);
+  -o-transform: scale(1.2) rotate(-10deg);
+}
