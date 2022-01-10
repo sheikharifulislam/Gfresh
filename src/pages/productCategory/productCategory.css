@@ -11,7 +11,7 @@
 .product-category-container {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .single-product-category {

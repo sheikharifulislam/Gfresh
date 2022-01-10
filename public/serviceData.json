@@ -1,0 +1,39 @@
+[
+    {
+        "id": "1",
+        "serviceIcon": "fas fa-money-bill-wave",
+        "serviceName": "Great Value",
+        "serviceDetails": "We offer competitive prices on our 100 million plus product range."
+    },
+    {
+        "id": "2",
+        "serviceIcon": "fab fa-cc-mastercard",
+        "serviceName": "Secure Payment",
+        "serviceDetails": "Pay with the world’s most popular and secure payment methods."
+    },
+    {
+        "id": "3",
+        "serviceIcon": "fas fa-truck",
+        "serviceName": "First Delivery",
+        "serviceDetails": "We deliver products within 1 to 3 days of receiving the order."
+    },
+    {
+        "id": "4",
+        "serviceIcon": "fa fa-sync-alt",
+        "serviceName": "7 Day Return",
+        "serviceDetails": "Download the app and get the world of AliExpress at your fingertips."
+    },
+    {
+        "id": "5",
+        "serviceIcon": "fas fa-shield-alt",
+        "serviceName": "Shop with Confidence",
+        "serviceDetails": "Our Buyer Protection covers your purchase from click to delivery."
+    },
+    {
+        "id": "6",
+        "serviceIcon": "fa fa-comments",
+        "serviceName": "24 / 7 Support",
+        "serviceDetails": "Round-the-clock assistance for a smooth shopping experience."
+    }
+    
+]

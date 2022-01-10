@@ -23,7 +23,7 @@ const ProductCategory = () => {
                 <div className="product-category-container">
                     {
                         categoryData.map((category) => (
-                            <NavLink to="/#" className="single-product-category">
+                            <NavLink to="/#" className="single-product-category" key={category.id}>
                                 <div className="product-category-image">
                                     <img src={category.categoryImage} alt="Category Image" />
                                 </div>

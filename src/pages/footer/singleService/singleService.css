@@ -1,0 +1,52 @@
+.single-service {
+  width: 16.6666666667%;
+  height: 200px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: 0 0 40px #eee;
+  background-color: #fff;
+}
+
+.service-icon i {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  font-size: 35px;
+  color: #20bf6b;
+}
+
+.single-service:nth-child(3) i {
+  transform: translateX(-50%) rotate(-7deg);
+  -webkit-transform: translateX(-50%) rotate(-7deg);
+  -moz-transform: translateX(-50%) rotate(-7deg);
+  -ms-transform: translateX(-50%) rotate(-7deg);
+  -o-transform: translateX(-50%) rotate(-7deg);
+}
+
+.service-name h3 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #333;
+  font-family: Bell MT;
+}
+
+.service-details {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}

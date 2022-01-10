@@ -20,7 +20,7 @@ const HeaderBanner = () => {
                 <div className="banner-container">
                    {
                        bannerData.map((data) => (
-                            <div className="banner">
+                            <div className="banner" key={data.id}>
                                 <div className="banner-image">
                                     <img src={data.bannerImage} alt="Banner Image Not Found" />
                                 </div>

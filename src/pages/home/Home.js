@@ -1,5 +1,7 @@
 import React from 'react';
 import AllProducts from '../allProducts/AllProducts';
+import AllServices from '../footer/allServices/AllServices';
+import Footer from '../footer/Footer';
 import HeaderBanner from '../headerBanner/HeaderBanner';
 import HeaderSlider from '../headerSlider/HeaderSlider';
 import Navbar from '../navbar/Navbar';
@@ -15,6 +17,7 @@ const Home = () => {
                 <ProductCategory/>
                 <AllProducts/>
             </main>
+            <Footer/>           
         </>
 
         

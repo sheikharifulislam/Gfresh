@@ -1,4 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@100;300;400;500&display=swap");
+/**********************
+***import google font**
+***********************/
+@import url("https://fonts.googleapis.com/css2?family=Bitter&family=Poppins:wght@100;300;400;500&family=Roboto+Condensed&display=swap");
+
+/**********************
+***start main stytle***
+***********************/
 .header {
   position: fixed;
   top: 0;

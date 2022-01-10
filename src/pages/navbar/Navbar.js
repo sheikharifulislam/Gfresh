@@ -44,7 +44,7 @@ const Navbar = () => {
                 </div>
                 <form id="search-form">
                     <input type="search" placeholder="Search here..." id="search-box"/>
-                    <label htmlFor="search-box" class="fas fa-search"></label>
+                    <label htmlFor="search-box" className="fas fa-search"></label>
                 </form>
             </div>
         </header>

@@ -1,0 +1,9 @@
+#all-services {
+  margin-bottom: 150px;
+  border-bottom: 1px solid #eee;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: warp;
+}
