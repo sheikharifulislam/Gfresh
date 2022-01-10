@@ -1,17 +1,15 @@
 import React from 'react';
 import AllServices from './allServices/AllServices';
+import CompanyAdditionalInformation from './companyAdditionalInformation/CompanyAdditionalInformation';
+import CompanyMainInformations from './companyMainInformations/CompanyMainInformations';
 
 const Footer = () => {
 
-    const footerStyle = {
-        backgroundColor: '#f5f5f5',
-        paddingTop: '50px',
-        marginTop: '150px',
-    }
-    
     return (
-        <footer style={footerStyle}>
+        <footer>
             <AllServices/>
+            <CompanyMainInformations/>
+            <CompanyAdditionalInformation/>
         </footer>
     );
 };

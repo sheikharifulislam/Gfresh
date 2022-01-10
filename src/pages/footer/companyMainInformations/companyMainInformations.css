@@ -1,0 +1,46 @@
+#company-informations-section {
+  margin-top: 60px;
+}
+
+.information-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.connected {
+  width: 30%;
+}
+
+.connected a i {
+  font-size: 30px;
+  color: #333;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.connected h3,
+.shopping-with-us h3,
+.customar-service h3,
+.Collaborate h3 {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.connected p,
+.shopping-with-us p,
+.customar-service p,
+.Collaborate p {
+  color: #333;
+  font-size: 13px;
+  line-height: 23px;
+}
+
+.connected p:hover,
+.shopping-with-us p:hover,
+.customar-service p:hover,
+.Collaborate p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

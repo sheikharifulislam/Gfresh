@@ -1,0 +1,40 @@
+#additional-information {
+  margin-top: 80px;
+  background-color: #000;
+  padding: 40px 0;
+}
+
+.additional-information-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.payment-method h3,
+.coverage-area h3,
+.verified-by h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.coverage-area img {
+  width: 50px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.coverage-area img:last-child {
+  margin-right: 0;
+}
+
+.verified-image-container {
+  display: flex;
+}
+.verified-image-container img {
+  width: 70px;
+  margin-right: 10px;
+}
+
+.verified-image-container img:last-child {
+  margin-right: 0;
+}
