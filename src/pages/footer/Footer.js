@@ -2,6 +2,7 @@ import React from 'react';
 import AllServices from './allServices/AllServices';
 import CompanyAdditionalInformation from './companyAdditionalInformation/CompanyAdditionalInformation';
 import CompanyMainInformations from './companyMainInformations/CompanyMainInformations';
+import FooterBottom from './footerBottom/FooterBottom';
 
 const Footer = () => {
 
@@ -10,6 +11,7 @@ const Footer = () => {
             <AllServices/>
             <CompanyMainInformations/>
             <CompanyAdditionalInformation/>
+            <FooterBottom/>
         </footer>
     );
 };

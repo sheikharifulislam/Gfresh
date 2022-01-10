@@ -7,11 +7,11 @@ const CompanyMainInformations = () => {
                 <div className="information-container">
                     <div className="connected">
                         <h3>Stay Connected</h3>
-                        <a href="/#" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-                        <a href="/#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="/#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="/#" title="Messenger"><i class="fab fa-facebook-messenger"></i></a>
-                        <a href="/#" title="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="/#" title="Facebook"><i className="fab fa-facebook-square"></i></a>
+                        <a href="/#" title="Twitter"><i className="fab fa-twitter"></i></a>
+                        <a href="/#" title="Instagram"><i className="fab fa-instagram"></i></a>
+                        <a href="/#" title="Messenger"><i className="fab fa-facebook-messenger"></i></a>
+                        <a href="/#" title="Whatsapp"><i className="fab fa-whatsapp"></i></a>
                     </div>
                     <div className="shopping-with-us">
                         <h3>Shopping With Us</h3>

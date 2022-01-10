@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "icon": "fas fa-phone",
+        "contactType": "Our Number",
+        "contactOption": "01729527451"
+    },
+    {
+        "id": "2",
+        "icon": "fas fa-envelope",
+        "contactType": "Our Email",
+        "contactOption": "sheikharifulislam700@gmail.com"
+    },
+    {
+        "id": "3",
+        "icon": "fas fa-map-marker-alt",
+        "contactType": "Our Address",
+        "contactOption": "Sylhet,Bangladesh"
+    }
+]

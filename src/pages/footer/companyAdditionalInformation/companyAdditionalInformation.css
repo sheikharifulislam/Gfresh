@@ -13,8 +13,9 @@
 .payment-method h3,
 .coverage-area h3,
 .verified-by h3 {
-  color: #fff;
+  color: #ada8a8;
   margin-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .coverage-area img {
