@@ -5,11 +5,11 @@ import ContactPageHeader from './contactPageHader/ContactPageHeader';
 
 const Contact = () => {
     return (
-        <>
+        <section id="contact-page">
             <ContactPageHeader/>
             <ContactOption/>
             <ContactFormAndLocation/>
-        </>
+        </section>
     );
 };
 

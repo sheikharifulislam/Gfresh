@@ -1,9 +1,8 @@
 import React from 'react';
-import AllProducts from '../allProducts/AllProducts';
-import Footer from '../footer/Footer';
-import HeaderBanner from '../headerBanner/HeaderBanner';
-import HeaderSlider from '../headerSlider/HeaderSlider';
-import ProductCategory from '../productCategory/ProductCategory';
+import HeaderSlider from './headerSlider/HeaderSlider';
+import HeaderBanner from './headerBanner/HeaderBanner';
+import ProductCategory from './productCategory/ProductCategory';
+import AllProducts from './allProducts/AllProducts';
 
 const Home = () => {
     return (
