@@ -8,6 +8,7 @@ import Contact from "./pages/Contact/Contact";
 import Footer from "./pages/footer/Footer";
 import Home from './pages/home/Home';
 import Navbar from './pages/navbar/Navbar';
+import Reviews from "./pages/reviews/Reviews";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="home" element={<Home/>}/>
           <Route path="contact" element={<Contact/>} />
           <Route path="about" element={<About/>} />
+          <Route path="review" element={<Reviews/>} />
         </Routes>
         <Footer/>
     </Router>

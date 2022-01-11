@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "clientImage": "image/pic-1.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    },
+    {
+        "id": "2",
+        "clientImage": "image/pic-2.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    },
+    {
+        "id": "3",
+        "clientImage": "image/pic-3.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    },
+    {
+        "id": "4",
+        "clientImage": "image/pic-4.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    },
+    {
+        "id": "5",
+        "clientImage": "image/pic-5.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": " Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    },
+    {
+        "id": "6",
+        "clientImage": "image/pic-6.png",
+        "clientName": "John Deo",
+        "reviewStar": "5",
+        "clientReviewDetails": "Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Voluptatem Molestiae Expedita Culpa Officiis Harum Impedit Vel! Odit Saepe Similique Vero!"
+    }
+]
