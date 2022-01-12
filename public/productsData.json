@@ -13,7 +13,8 @@
         "mainPrice": "1550",
         "offerPrice": "1210",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Rice"
     },
     {
         "id": "2",
@@ -27,9 +28,10 @@
         "country": "Not Specified",
         "flavour": "Not Specified",
         "mainPrice": "325",
-        "offerPrice": "325",
+        "offerPrice": "",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Rice"
     },
     {
         "id": "3",
@@ -45,7 +47,8 @@
         "mainPrice": "120",
         "offerPrice": "110",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Garlic"
     },
     {
         "id": "4",
@@ -61,7 +64,8 @@
         "mainPrice": "40",
         "offerPrice": "30",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Pototo"
     },
     {
         "id": "5",
@@ -77,7 +81,8 @@
         "mainPrice": "100",
         "offerPrice": "80",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Tomato"
     },
     {
         "id": "6",
@@ -93,7 +98,8 @@
         "mainPrice": "80",
         "offerPrice": "70",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Carrot"
     },
     {
         "id": "7",
@@ -107,9 +113,10 @@
         "country": "Bangladesh",
         "flavour": "Not Specified",
         "mainPrice": "130",
-        "offerPrice": "130",
+        "offerPrice": "",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Apple"
     },
     {
         "id": "8",
@@ -125,7 +132,8 @@
         "mainPrice": "500",
         "offerPrice": "399",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Almond Nut"
     },
     {
         "id": "9",
@@ -141,7 +149,8 @@
         "mainPrice": "150",
         "offerPrice": "112",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Raisin"
     },
     {
         "id": "10",
@@ -157,7 +166,8 @@
         "mainPrice": "585",
         "offerPrice": "510",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Tuna"
     },
     {
         "id": "11",
@@ -173,7 +183,8 @@
         "mainPrice": "155",
         "offerPrice": "131",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Mug Dal"
     },
     {
         "id": "12",
@@ -189,7 +200,8 @@
         "mainPrice": "912",
         "offerPrice": "825",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Red Snapper Fish"
     },
     {
         "id": "13",
@@ -205,7 +217,8 @@
         "mainPrice": "100",
         "offerPrice": "75",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Gol Morich"
     },
     {
         "id": "14",
@@ -221,7 +234,8 @@
         "mainPrice": "359",
         "offerPrice": "375",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Radhuni Cumin Powder"
     },
     {
         "id": "15",
@@ -237,7 +251,8 @@
         "mainPrice": "400",
         "offerPrice": "395",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Nicobena Naga King Pickles"
     },
     {
         "id": "16",
@@ -253,7 +268,8 @@
         "mainPrice": "120",
         "offerPrice": "110",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Nicobena Olive Hot Pickles"
     },
     {
         "id": "17",
@@ -269,7 +285,8 @@
         "mainPrice": "380",
         "offerPrice": "319",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Skin On Chicken"
     },
     {
         "id": "18",
@@ -285,7 +302,8 @@
         "mainPrice": "200",
         "offerPrice": "180",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Muskan Fortified Soyabean Oil"
     },
     {
         "id": "19",
@@ -301,7 +319,8 @@
         "mainPrice": "290",
         "offerPrice": "268",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Radhuni Mustard Oil"
     },
     {
         "id": "20",
@@ -317,7 +336,8 @@
         "mainPrice": "370",
         "offerPrice": "363",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "NIDO Full Cream Milk Powder"
     },
     {
         "id": "21",
@@ -333,6 +353,7 @@
         "mainPrice": "320",
         "offerPrice": "195",
         "reviews": [],
-        "reviewStar": "0"
+        "reviewStar": "0",
+        "inTheBox": "Schweppes Ginger Ale"
     }
 ]

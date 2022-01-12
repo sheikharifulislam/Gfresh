@@ -7,7 +7,7 @@ const AboutUsDetails = () => {
             <div className="container">
                 <div className="about-us-details-container">
                     <div className="about-us-image">
-                        <img src="image/about-img.jpg" alt="" />
+                        <img src="image/about-img.jpg" alt="Description Display" />
                     </div>
                     <div className="about-us-descriptions">
                         <h1 className="about-us-descriptions-title">Welcome To Our Shop</h1>

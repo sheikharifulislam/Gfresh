@@ -22,7 +22,7 @@ const HeaderBanner = () => {
                        bannerData.map((data) => (
                             <div className="banner" key={data.id}>
                                 <div className="banner-image">
-                                    <img src={data.bannerImage} alt="Banner Image Not Found" />
+                                    <img src={data.bannerImage} alt="current offer thumbnail" />
                                 </div>
                                 <div className="banner-content">
                                     <h3>{data.offerName}</h3>

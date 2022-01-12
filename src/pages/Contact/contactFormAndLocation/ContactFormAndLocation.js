@@ -28,7 +28,7 @@ const ContactFormAndLocation = () => {
                        </div>
                    </div>
                    <div className="our-location">
-                        <iframe title="google-map" id="gmap_canvas" src="https://maps.google.com/maps?q=Blue%20Water%20Shopping%20City&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <iframe title="google-map" id="gmap_canvas" src="https://maps.google.com/maps?q=Blue%20Water%20Shopping%20City&t=&z=13&ie=UTF8&iwloc=&output=embed"  scrolling="no"></iframe>
                    </div>
                </div>
            </div>

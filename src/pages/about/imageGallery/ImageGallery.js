@@ -21,14 +21,14 @@ const ImageGallery = () => {
                 <div className="gallery-content-container">
                     {
                         imageData.map((data) => (
-                            <div className="single-gallery-content">
+                            <div className="single-gallery-content" key={data.id}>
                                 <div className="gallery-image">
-                                    <img src={data.image} alt="" />
+                                    <img src={data.image} alt="Pictures of our farm product" />
                                 </div>
                                 <div className="image-relevant-icons">
-                                <a href="/#" className="fas fa-eye" />
-                                <a href="/#" className="fas fa-heart" />
-                                <a href="/#" className="fas fa-share-alt" />
+                                <i className="fas fa-eye" />
+                                <i className="fas fa-heart" />
+                                <i className="fas fa-share-alt" />
                                 </div>
                             </div>
                         ))

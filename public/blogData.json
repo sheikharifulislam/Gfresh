@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "blogImage": "image/blog-1.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    },
+    {
+        "id": "2",
+        "blogImage": "image/blog-2.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    },
+    {
+        "id": "3",
+        "blogImage": "image/blog-3.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    },
+    {
+        "id": "4",
+        "blogImage": "image/blog-4.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    },
+    {
+        "id": "5",
+        "blogImage": "image/blog-5.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    },
+    {
+        "id": "6",
+        "blogImage": "image/blog-6.jpg",
+        "createDate": "21st May, 2021",
+        "createBy": "By Admin",
+        "blogTitle": "Blogs Title Goes Here",
+        "blogDetails": "Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor! Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Odio, Dolor!"
+    }
+]

@@ -14,7 +14,7 @@ const HeaderSlider = () => {
                         <button>Shop Now</button>
                     </div>
                     <div className="slide-image">
-                        <img src="image/home-img-1.png" alt="Slider Image Not Found" />
+                        <img src="image/home-img-1.png" alt="current offer slider thumbnail" />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,141 @@
+#all-blogs-section {
+  margin-top: 40px;
+}
+
+.all-blogs-section-title h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.all-blogs-section-title h2 span {
+  color: #bac34e;
+}
+
+.all-blogs-section-title hr {
+  display: block;
+  width: 200px;
+  height: 2px;
+  background-color: blue;
+}
+
+.all-blogs-container {
+  margin-top: 40px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.single-blog {
+  width: 32.3333333333%;
+  height: 450px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.single-blog-image {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.single-blog-image img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.single-blog-image:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  cursor: pointer;
+}
+
+.single-blog-into {
+  width: 100%;
+  height: 47%;
+  margin-top: 3%;
+}
+
+.single-blog-into .container-fluid {
+  height: 100%;
+}
+
+.create-time-and-person {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #bac34e;
+  font-family: "Bitter", serif;
+  font-weight: 400;
+}
+
+.blog-text {
+  width: 100%;
+  height: 55%;
+  overflow: hidden;
+}
+
+.single-blog-title {
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+}
+.single-blog-title h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #222;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.single-blog-details {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.single-blog-details P {
+  font-size: 15px;
+  color: #222;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 25px;
+}
+
+.read-more-btn {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.read-more-btn button {
+  padding: 12px 25px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background-color: #bca34e;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
