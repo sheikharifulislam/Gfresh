@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './registration.css';
 
 const Registration = () => {
@@ -11,29 +12,52 @@ const Registration = () => {
                 </div>
                 <form id="registration-form">
                     <div className="registration-form-design">
-                        <label htmlFor="name">Your Name</label>
-                        <input type="text" placeholder="Enter Your Name" id="name" name="name" required/>
+                       <div className="single-registration-input-area">
+                            <label htmlFor="name">Your Name</label>
+                            <input type="text" placeholder="Enter Your Name" id="name" name="name" required/>
+                       </div>
+                       <div className="single-registration-input-area">
+                            <label htmlFor="email">Your Email</label>
+                            <input type="email" placeholder='Enter Your Email Address' name="email" id="email" required/>
+                       </div>
                     </div>
                     <div className="registration-form-design">
-                        <label htmlFor="email">Your Email</label>
-                        <input type="email" placeholder='Enter Your Email Address' name="email" id="email" required/>
+                        <div className="single-registration-input-area">
+                            <label htmlFor="mobileNumber">your Mobile Number</label>
+                            <input type="number" placeholder="Enter your Mobile Number" name="mobileNumber" id="mobileNumber" required/>
+                        </div>
+                        <div className="single-registration-input-area">
+                           <label htmlFor="city">Your City</label>
+                           <input type="text" placeholder="Enter Your City Name" name="city" id="city" />
+                        </div>
                     </div>
                     <div className="registration-form-design">
-                        <label htmlFor="mobileNumber">your Mobile Number</label>
-                        <input type="number" placeholder="Enter your Mobile Number" name="mobileNumber" id="mobileNumber" required/>
+                       <div className="single-registration-input-area">
+                            <label htmlFor="Passowrd">Your Pasword</label>
+                            <input type="password"placeholder="Enter Your Password" name="Passowrd" id="Passowrd" required/>
+                       </div>
+                       <div className="single-registration-input-area">
+                            <label htmlFor="confirmPassword">Confirm Password</label>
+                            <input type="password" placeholder="Confirm Your Password" name="confirmPassword" id="confirmPassword" />
+                       </div>
                     </div>
                     <div className="registration-form-design">
-                        <label htmlFor="Passowrd">Your Pasword</label>
-                        <input type="password"placeholder="Enter Your Password" name="Passowrd" id="Passowrd" required/>
-                    </div>
-                    <div className="registration-form-design">
-                        <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input type="password" placeholder="Confirm Your Password" name="confirmPassword" id="confirmPassword" />
-                    </div>
-                    <div className="registration-form-design">
-                        <input type="submit" value="Sign Up" />
-                    </div>
+                        <input type="submit" value="Sign Up" id="registration-btn" />            
+                    </div>        
                 </form>
+                <div className="other-registration-options-section">
+                    <div className="other-registration-section-title">
+                        <h2>OR</h2>
+                    </div>
+                    <div className="other-registration-options">
+                        <div><img src="image/google.png" alt="Google" /></div>
+                        <div><img src="image/facebook.png" alt="Facebook" /></div>
+                        <div><img src="image/twitter.png" alt="Twitter" /></div>
+                    </div>
+                </div>
+                <div className="registration-to-login">
+                    <small>Already Have An Acount<NavLink to="/login">Log In?</NavLink></small>
+                </div>
             </div>
         </section>
     );

@@ -27,8 +27,8 @@ const LoginForm = () => {
                                     <input type="submit" value="Login" />
                                     <small>Forget Password ?</small>
                                 </div>
-                                <div className="other-login-option">
-                                    <div className="other-login-options-title">
+                                <div className="other-login-option-section">
+                                    <div className="other-login-options-section-title">
                                         <h4>Login With</h4>
                                     </div>
                                     <div className="other-login-options">

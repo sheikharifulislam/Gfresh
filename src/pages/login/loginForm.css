@@ -87,14 +87,14 @@
   cursor: pointer;
 }
 
-.other-login-option {
+.other-login-option-section {
   display: flex;
   align-items: center;
   margin-top: 50px;
   justify-content: center;
 }
 
-.other-login-options-title h4 {
+.other-login-options-section-title h4 {
   font-weight: 400;
   margin-right: 40px;
 }

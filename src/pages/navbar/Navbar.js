@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.css';
 
 const Navbar = () => {
+
+    const searchForm = useRef(null);
+
+    const toggleSearchBox = () => {
+        searchForm.current.classList.toggle('active-search-form');
+    }
+    
+    const removeSearchBox = () => {
+        searchForm.current.classList.remove('active-search-form');
+    }
+
     return (
         <header className="header">
             <div className="header-container">
@@ -41,11 +52,11 @@ const Navbar = () => {
                 </div>
                 <div className="icons">
                     <div id="menu-btn" className="fas fa-bars"/>
-                    <div id="search-btn" className="fas fa-search"/>
-                    <div id="cart-btn" className="fas fa-shopping-cart"/>
-                    <div id="acount-btn" className="fas fa-user"/>
+                    <div id="search-btn" className="fas fa-search" onClick={toggleSearchBox} />
+                    <div id="cart-btn" className="fas fa-shopping-cart" onClick={removeSearchBox} />
+                    <div id="acount-btn" className="fas fa-user" onClick={removeSearchBox} />
                 </div>
-                <form id="search-form">
+                <form className="search-form" ref={searchForm}>
                     <input type="search" placeholder="Search here..." id="search-box"/>
                     <label htmlFor="search-box" className="fas fa-search"></label>
                 </form>
