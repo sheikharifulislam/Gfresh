@@ -10,6 +10,7 @@ import Footer from "./pages/footer/Footer";
 import Home from './pages/home/Home';
 import LoginForm from "./pages/login/LoginForm";
 import Navbar from './pages/navbar/Navbar';
+import Registration from "./pages/registration/Registration";
 import Reviews from "./pages/reviews/Reviews";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="review" element={<Reviews/>} />
           <Route path="blogs" element={<Blogs/>} />
           <Route path="login" element={<LoginForm/>} />
+          <Route path="registration" element={<Registration/>} />
         </Routes>
         <Footer/>
     </Router>
