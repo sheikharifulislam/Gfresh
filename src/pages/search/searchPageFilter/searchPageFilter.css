@@ -1,0 +1,58 @@
+#search-page-filter-section {
+  width: 15%;
+  /* border: 1px solid blue; */
+}
+
+.search-page-related-categorys-filter,
+.search-page-brands-filter,
+.search-page-service-filter,
+.search-page-rating-filter {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-page-related-categorys-filter h4,
+.search-page-brands-filter h4,
+.search-page-service-filter h4,
+.search-page-rating-filter h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.search-page-related-categorys-filter small {
+  display: block;
+  line-height: 22px;
+  color: #757575;
+  font-size: 14px;
+}
+
+.search-page-related-categorys-filter small:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #da581f;
+}
+
+.search-page-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-page-checkbox-container input {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.search-page-checkbox-container label {
+  font-size: 15px;
+  line-height: 26px;
+  color: #757575;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.search-page-rating-filter #star {
+  font-size: 20px;
+}

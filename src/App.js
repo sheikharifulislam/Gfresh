@@ -12,6 +12,7 @@ import LoginForm from "./pages/login/LoginForm";
 import Navbar from './pages/navbar/Navbar';
 import Registration from "./pages/registration/Registration";
 import Reviews from "./pages/reviews/Reviews";
+import Search from "./pages/search/Search";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="blogs" element={<Blogs/>} />
           <Route path="login" element={<LoginForm/>} />
           <Route path="registration" element={<Registration/>} />
+          <Route path="search" element={<Search/>} />
         </Routes>
         <Footer/>
     </Router>

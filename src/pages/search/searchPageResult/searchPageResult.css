@@ -1,0 +1,39 @@
+#search-page-result {
+  width: 81%;
+}
+
+.search-page-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.totla-search-result-title h6 {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.search-page-result-normal-filter label {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.search-page-result-normal-filter select {
+  width: 200px;
+  border: 1px solid blue;
+  padding: 10px 10px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  cursor: pointer;
+}
+
+.search-page-result-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
