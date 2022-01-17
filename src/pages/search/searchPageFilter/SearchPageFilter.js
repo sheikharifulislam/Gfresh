@@ -1,8 +1,6 @@
 import React from 'react';
 import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import { Checkbox, Rating} from '@mui/material';
-import { pink } from '@mui/material/colors';
+import {  Rating} from '@mui/material';
 import './searchPageFilter.css';
 
 const SearchPageFilter = () => {
@@ -18,7 +16,7 @@ const SearchPageFilter = () => {
                 <h4>Related Category</h4>
                 {
                     relatedCategory.map((category) => (
-                        <small>{category}</small>
+                        <small key={category}>{category}</small>
                     ))
                 }
             </div>
@@ -27,7 +25,7 @@ const SearchPageFilter = () => {
                 <FormGroup>
                     {
                         brandsName.map((brandName) => (
-                           <div className="search-page-checkbox-container">
+                           <div className="search-page-checkbox-container" key={brandName}>
                                 <input type="checkbox" id={brandName} />
                                 <label htmlFor={brandName}>{brandName}</label>
                            </div>
@@ -39,7 +37,7 @@ const SearchPageFilter = () => {
                 <h4>Service</h4>
                 {
                     services.map((service) =>(
-                        <div className="search-page-checkbox-container">
+                        <div className="search-page-checkbox-container" key={service}>
                             <input type="checkbox" id={service} />
                             <label htmlFor={service}>{service}</label>
                         </div>
@@ -50,7 +48,7 @@ const SearchPageFilter = () => {
                 <h4>Rating</h4>
                 {
                     ratings.map((rating) => (
-                        <Rating name="read-only" id="star" value={rating} readOnly />
+                        <Rating name="read-only" id="star" value={rating} key={rating} readOnly />
                     ))
                 }
             </div>
