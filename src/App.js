@@ -3,6 +3,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Product from "./demo/Product";
 import About from "./pages/about/About";
 import Blogs from "./pages/blogs/Blogs";
 import Contact from "./pages/Contact/Contact";
@@ -28,6 +29,7 @@ function App() {
           <Route path="login" element={<LoginForm/>} />
           <Route path="registration" element={<Registration/>} />
           <Route path="search" element={<Search/>} />
+          <Route path="add" element={<Product/>} />
         </Routes>
         <Footer/>
     </Router>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { NavLink,useNavigate } from 'react-router-dom';
 import './navbar.css';
 
@@ -16,6 +16,8 @@ const Navbar = () => {
         searchForm.current.classList.remove('active-search-form');
     }
 
+
+
     const handleSearchBox = (e) => {
        const field = e.target.name;
        const value = e.target.value;
@@ -25,7 +27,8 @@ const Navbar = () => {
     }
 
     const handleSearchForm = () => {
-        navigate(`search?productName=${searchData.search}`,{
+        console.log(searchData);
+        navigate(`/search?productName=${searchData.search}`,{
             replace: true,
         })
     }
@@ -73,7 +76,7 @@ const Navbar = () => {
                     <div id="acount-btn" className="fas fa-user" onClick={removeSearchBox} />
                 </div>
                 <form className="search-form" ref={searchForm}>
-                    <input type="search" placeholder="Search here..." id="search-box" name="search" onInput={handleSearchBox}/>
+                    <input type="search" placeholder="Search here..." id="search-box" name="search" value="null" onInput={handleSearchBox}/>
                     <label htmlFor="search-box" className="fas fa-search" onClick={handleSearchForm}/>
                 </form>
             </div>

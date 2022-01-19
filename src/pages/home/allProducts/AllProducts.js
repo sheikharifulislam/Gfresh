@@ -1,5 +1,7 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
+import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './allProducts.css';
 
 const AllProducts = () => {
@@ -7,11 +9,14 @@ const AllProducts = () => {
     const [allProductData, setAllProductData] = useState([]);
 
     useEffect(() => {
-        fetch('/productsData.json')
-        .then((response) => response.json())
-        .then((data) => setAllProductData(data))
+        axios.get('http://localhost:5000/all-products')
+        .then((data) => setAllProductData(data.data))
         .catch((error) => console.log(error.message))
     }, []); 
+
+    if(allProductData.length < 1) {
+        return <CircularLoader/>
+    }
 
     return (
         <section id="all-products-section">
@@ -21,7 +26,7 @@ const AllProducts = () => {
                 </div>
                 <div className="all-products-container">
                     {
-                        allProductData.map((product) => <SingleProduct key={product.id} product={product}/>)
+                        allProductData.map((product) => <SingleProduct key={product._id} product={product}/>)
                     }
                 </div>
             </div>

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React,{useEffect, useState} from 'react';
 import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import './searchPageResult.css';
@@ -8,10 +9,9 @@ const SearchPageResult = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('/productsData.json')
-        .then((response) => response.json())
-        .then((data) => setData(data))
-        .catch((error) => console.log(error.message))
+        axios.get('http://localhost:5000/all-products')
+        .then((data) => setData(data.data))
+        .catch((error) => console.error(error.message))
     }, []); 
 
     return (
