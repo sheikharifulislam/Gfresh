@@ -55,6 +55,7 @@
 .single-registration-input-area {
   width: 47.5%;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .single-registration-input-area label {
@@ -72,6 +73,13 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+}
+
+.single-registration-input-area small {
+  color: red;
+  font-size: 10px;
+  position: absolute;
+  top: 105%;
 }
 
 .registration-form-design input[type="submit"] {
