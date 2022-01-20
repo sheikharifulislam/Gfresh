@@ -1,8 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useFirebase from '../../customHooks/useFirebase';
+import validation from '../../lib/validation';
 import './loginForm.css';
 
 
 const LoginForm = () => {
+
+    const [loginData, setLoginData] = useState({})
+    const [loginError, setLoginError] = useState({});
+    const {emailValidation, passwordValidation} = validation();
+    const {login} = useFirebase();
+    const navigate = useNavigate()
+    const location = useLocation();
+
+    const handleInput = (e) => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = {...loginData};
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
+    }
+
+    const handleLoginForm = (e) => {
+        e.preventDefault();
+        setLoginError({});
+        if(emailValidation(loginData.email)) {
+            if(passwordValidation(loginData.password)) {
+                login(loginData,navigate,location);
+                e.target.reset();
+            }
+            else {
+                setLoginError({
+                    ...loginError,
+                    passwordError: "Please Provide a valid Password",
+                });
+                return;               
+            }
+        }
+        else {
+            setLoginError({
+                ...loginError,
+                emailError: "Please Provide a valid E-mail Address",
+            });
+            return;            
+        }
+    }
+
     return (
         <section id="login-page">
             <div className="container-fluid">
@@ -14,14 +58,22 @@ const LoginForm = () => {
                         <div className="login-form-title">
                             <h2>Wellcome Back !</h2>
                             <h6>Login To Continue</h6>
-                            <form action="">
+                            <form onSubmit={handleLoginForm}>
                                 <div className="login-form-design">
-                                    <label htmlFor="userName">Your Email</label>
-                                    <input type="email" placeholder="Enter Your Email Address" id="userName" name="userNmae" required />
+                                    <label htmlFor="email">Your Email</label>
+                                    <input type="email" placeholder="Enter Your Email Address" id="email" name="email" onInput={handleInput} required />
+                                    {
+                                        loginError.emailError &&
+                                        <small>{loginError.emailError}</small>
+                                    }
                                 </div>
                                 <div className="login-form-design">
-                                    <label htmlFor="userPassword">Your Password</label>
-                                    <input type="password" placeholder="Enter your password" id="userPassword" name="userPassword"required />
+                                    <label htmlFor="password">Your Password</label>
+                                    <input type="password" placeholder="Enter your password" id="password" name="password" onInput ={handleInput} required />
+                                    {
+                                        loginError.passwordError &&
+                                        <small>{loginError.passwordError}</small>
+                                    }
                                 </div>
                                 <div className="login-form-submit-btn-and-other">
                                     <input type="submit" value="Login" />

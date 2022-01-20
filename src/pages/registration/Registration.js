@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import validation from '../../lib/validation';
 import useFirebase from '../../customHooks/useFirebase';
 import './registration.css';
@@ -8,9 +8,12 @@ const Registration = () => {
 
     const [registrationData, setRegistrationData] = useState({});
     const [registrationError, setRegistrationError] = useState({});
-    const {emailValidation} = validation();
-    const {passwordValidation} = validation();
+    const {emailValidation, passwordValidation} = validation();    
     const {registration} = useFirebase();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    
 
     const handleInput = (e) => {
         const field = e.target.name;
@@ -27,8 +30,9 @@ const Registration = () => {
         if(emailValidation(registrationData.email)) {                 
             if(passwordValidation(registrationData.password)) {                              
                 if(registrationData.password === registrationData.confirmPassword) {                   
-                    registration(registrationData);
+                    registration(registrationData,navigate,location);
                     setRegistrationError({});
+                    e.target.reset();
                 }
                 else {
                     setRegistrationError({
