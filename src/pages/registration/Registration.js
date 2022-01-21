@@ -9,11 +9,9 @@ const Registration = () => {
     const [registrationData, setRegistrationData] = useState({});
     const [registrationError, setRegistrationError] = useState({});
     const {emailValidation, passwordValidation} = validation();    
-    const {registration} = useFirebase();
+    const {registration, googleSignIn} = useFirebase();
     const navigate = useNavigate();
-    const location = useLocation();
-
-    
+    const location = useLocation();    
 
     const handleInput = (e) => {
         const field = e.target.name;
@@ -115,7 +113,7 @@ const Registration = () => {
                         <h2>OR</h2>
                     </div>
                     <div className="other-registration-options">
-                        <div><img src="image/google.png" alt="Google" /></div>
+                        <div onClick={() => googleSignIn(navigate,location)}><img src="image/google.png" alt="Google" /></div>
                         <div><img src="image/facebook.png" alt="Facebook" /></div>
                         <div><img src="image/twitter.png" alt="Twitter" /></div>
                     </div>

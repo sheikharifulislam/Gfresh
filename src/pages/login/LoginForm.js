@@ -10,7 +10,7 @@ const LoginForm = () => {
     const [loginData, setLoginData] = useState({})
     const [loginError, setLoginError] = useState({});
     const {emailValidation, passwordValidation} = validation();
-    const {login} = useFirebase();
+    const {login, googleSignIn} = useFirebase();
     const navigate = useNavigate()
     const location = useLocation();
 
@@ -84,7 +84,7 @@ const LoginForm = () => {
                                         <h4>Login With</h4>
                                     </div>
                                     <div className="other-login-options">
-                                        <div><img src="image/google.png" alt="Google" /></div>
+                                        <div onClick={() => googleSignIn(navigate, location)}><img src="image/google.png" alt="Google" /></div>
                                         <div><img src="image/facebook.png" alt="Facebook" /></div>
                                         <div><img src="image/twitter.png" alt="Twitter" /></div>
                                     </div>
