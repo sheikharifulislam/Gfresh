@@ -11,7 +11,7 @@ const SingleProduct = ({product}) => {
         <NavLink to="/#" className="single-product">
             <div className="single-product-container">
                 <div className="single-product-image">
-                    <img src={`http://localhost:5000/${product.productImage}`} alt={product.inTheBox} />
+                    <img src={`https://arcane-lake-20041.herokuapp.com/${product.productImage}`} alt={product.inTheBox} />
                 </div>
                 <div className="single-product-body">
                     <div className="single-product-title">

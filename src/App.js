@@ -3,6 +3,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Context from "./context/Context";
 import Product from "./demo/Product";
 import About from "./pages/about/About";
 import Blogs from "./pages/blogs/Blogs";
@@ -17,22 +18,24 @@ import Search from "./pages/search/Search";
 
 function App() {
   return (
-    <Router>
-      <Navbar/>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="home" element={<Home/>}/>
-          <Route path="contact" element={<Contact/>} />
-          <Route path="about" element={<About/>} />
-          <Route path="review" element={<Reviews/>} />
-          <Route path="blogs" element={<Blogs/>} />
-          <Route path="login" element={<LoginForm/>} />
-          <Route path="registration" element={<Registration/>} />
-          <Route path="search" element={<Search/>} />
-          <Route path="add" element={<Product/>} />
-        </Routes>
-        <Footer/>
-    </Router>
+    <Context>
+        <Router>
+        <Navbar/>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="home" element={<Home/>}/>
+            <Route path="contact" element={<Contact/>} />
+            <Route path="about" element={<About/>} />
+            <Route path="review" element={<Reviews/>} />
+            <Route path="blogs" element={<Blogs/>} />
+            <Route path="login" element={<LoginForm/>} />
+            <Route path="registration" element={<Registration/>} />
+            <Route path="search" element={<Search/>} />
+            <Route path="add" element={<Product/>} />
+          </Routes>
+          <Footer/>
+      </Router>
+    </Context>
   );
 }
 

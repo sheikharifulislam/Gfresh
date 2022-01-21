@@ -16,7 +16,7 @@ const HeaderSlider = () => {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:5000/slider-data')
+        axios.get('https://arcane-lake-20041.herokuapp.com/slider-data')
         .then((data) => setSlidetData(data.data))
         .catch((error) => console.log(error.message))
     },[]);
@@ -31,7 +31,11 @@ const HeaderSlider = () => {
             setCount(0);
           }
          
-        }, 3000)         
+        }, 3000)
+        
+        return () => {
+            resetTimeout();  
+        }
         
       }, [count]);
 
@@ -52,7 +56,7 @@ const HeaderSlider = () => {
                                     <button>Shop Now</button>
                                 </div>
                                 <div className="slide-image">
-                                    <img src={`http://localhost:5000/${data.sliderImage}`} alt="current offer slider thumbnail" />
+                                    <img src={`https://arcane-lake-20041.herokuapp.com/${data.sliderImage}`} alt="current offer slider thumbnail" />
                                 </div>
                             </div>
                         </div>

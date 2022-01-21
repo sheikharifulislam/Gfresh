@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import useFirebase from '../../customHooks/useFirebase';
+import {FirebaseContext} from '../../context/FirebaseProvider';
 import validation from '../../lib/validation';
 import './loginForm.css';
 
@@ -10,7 +10,7 @@ const LoginForm = () => {
     const [loginData, setLoginData] = useState({})
     const [loginError, setLoginError] = useState({});
     const {emailValidation, passwordValidation} = validation();
-    const {login, googleSignIn} = useFirebase();
+    const {login, googleSignIn} = useContext(FirebaseContext);
     const navigate = useNavigate()
     const location = useLocation();
 

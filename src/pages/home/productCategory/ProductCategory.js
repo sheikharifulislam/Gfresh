@@ -12,7 +12,8 @@ const ProductCategory = () => {
         .then((response) => response.json())
         .then((data) => setCategoryData(data))
         .catch((error) => console.log(error.message))
-    },[])
+    },[]);
+
 
     return (
         <section className="product-category-section">
@@ -23,7 +24,7 @@ const ProductCategory = () => {
                 <div className="product-category-container">
                     {
                         categoryData.map((category) => (
-                            <NavLink to="/#" className="single-product-category" key={category.id}>
+                            <NavLink to={`/search?categoryName=${category.categoryName}`} className="single-product-category" key={category.id}>
                                 <div className="product-category-image">
                                     <img src={category.categoryImage} alt={category.categoryName} />
                                 </div>

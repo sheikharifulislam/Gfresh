@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import validation from '../../lib/validation';
-import useFirebase from '../../customHooks/useFirebase';
 import './registration.css';
+import { FirebaseContext } from '../../context/FirebaseProvider';
 
 const Registration = () => {
 
     const [registrationData, setRegistrationData] = useState({});
     const [registrationError, setRegistrationError] = useState({});
     const {emailValidation, passwordValidation} = validation();    
-    const {registration, googleSignIn} = useFirebase();
+    const {registration, googleSignIn} = useContext(FirebaseContext);
     const navigate = useNavigate();
     const location = useLocation();    
 

@@ -8,7 +8,7 @@ firebaseInitialize();
 
 const useFirebase = () => {
 
-    const [user, setUser] = useState();
+    const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [admin, setAdmin] = useState({});    
 
@@ -127,9 +127,12 @@ const useFirebase = () => {
         signOut(auth)
         .then(() => {
             swal({                    
-                title: `${user.displayName} Succefully Logout`,                
+                title: `${user.displayName}`,
+                text: 'Succefully Logout',                
                 icon: "success",
                 timer: 1000,
+                html: true,
+                customClass: 'logout-modal',
                 buttons: false,        
               })
               .then(() => {
@@ -183,7 +186,10 @@ const useFirebase = () => {
         registration,
         login,
         googleSignIn,
-        logOut,       
+        logOut,
+        user,
+        isLoading,
+        admin,       
     }
 }
 

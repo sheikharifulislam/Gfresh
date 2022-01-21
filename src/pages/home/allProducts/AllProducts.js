@@ -9,7 +9,7 @@ const AllProducts = () => {
     const [allProductData, setAllProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/all-products')
+        axios.get('https://arcane-lake-20041.herokuapp.com/all-products')
         .then((data) => setAllProductData(data.data))
         .catch((error) => console.log(error.message))
     }, []); 
