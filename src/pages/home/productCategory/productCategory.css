@@ -20,6 +20,9 @@
   color: #fff;
   box-shadow: 0 0 12px #f5f5f5;
 }
+.single-product-category:hover {
+  cursor: pointer;
+}
 
 .product-category-image {
   width: 100%;

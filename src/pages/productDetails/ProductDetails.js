@@ -3,16 +3,17 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import  './productDetails.css';
 
 const ProductDetails = () => {
 
     const {productId} = useParams();
-    const [singleProduct, serSingleProduct] = useState({});
+    const [singleProduct, setSingleProduct] = useState({});
 
     useEffect(() => {
         axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productId=${productId}`)
         .then((response) => {
-            serSingleProduct(response.data);
+            setSingleProduct(response.data);
         })
         .catch((error) => {
             if(error.message) {
@@ -29,15 +30,15 @@ const ProductDetails = () => {
         <section id="product-details-page">
             <div className="container-fluid">
                <div className="product-details-container">
-                    <section className="product-details-image-section">
+                    <section id="product-details-image-section">
                         <div className="product-details-image">
-                            <img src={singleProduct.productImage} alt="" />
+                            <img src={`https://arcane-lake-20041.herokuapp.com/${singleProduct.productImage}`} alt={singleProduct.inTheBox} />
                         </div>
                     </section>
-                    <section id="product-details">
+                    <section id="product-details-section">
                         <div className="product-general-features">
                             <div className="product-name">
-                                <h6>{singleProduct.productName}</h6>
+                                <h2>{singleProduct.productName}</h2>
                             </div>
                             <div className="product-rating">
                                 <Stack>
@@ -49,55 +50,89 @@ const ProductDetails = () => {
                                     precision={0.5}
                                     readOnly />
                                 </Stack>
+                                <div className="product-rating-comment">
+                                    <small>({singleProduct.reviews?.length})</small>
+                                </div>
+
                             </div>
-                            <div className="product-general-feature-product-pricc">
+                            <div className="product-general-feature-product-price">
                                 {
                                     singleProduct.offerPrice !== singleProduct.mainPrice ?
-                                    <small>{singleProduct.offerPrice}</small>
+                                    <small>Price: {singleProduct.offerPrice}$</small>
                                     :
-                                    <small>{singleProduct.mainPrice }</small>
+                                    <small>Price: {singleProduct.mainPrice }$</small>
                                 }
                             </div>
                         </div>
                         <div className="other-product-details">
-                        <ul>
-                                <li>Brand: {singleProduct.brand}</li>
-                                <li>Category: {}</li>
-                                <li>weight</li>
-                                <li>pack Size</li>
-                                <li>country</li>
-                                <li>flavour</li>
-                                <li>in the box</li>
-                        </ul>
-                        <div className="product-descriptions">
-                            <h4>About This Item</h4>
-                            <ul>
-                                <li>
-                                        
-                                </li>
-                            </ul>
-                        </div>
+                            <table>
+                                <tr>
+                                    <td>Brand</td>
+                                    <td>{singleProduct.brand}</td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td>{singleProduct.category}</td>
+                                </tr>
+                                <tr>
+                                    <td>weight</td>
+                                    <td>{singleProduct.weight}</td>
+                                </tr>
+                                <tr>
+                                    <td>pack Size</td>
+                                    <td>{singleProduct.packSize}</td>
+                                </tr>
+                                <tr>
+                                    <td>country</td>
+                                    <td>{singleProduct.country}</td>
+                                </tr>
+                                <tr>
+                                    <td>flavour</td>
+                                    <td>{singleProduct.flavour}</td>
+                                </tr>
+                                <tr>
+                                    <td>in the box</td>
+                                    <td>{singleProduct.inTheBox}</td>
+                                </tr>
+                            </table >            
+                            
+                            <div className="product-descriptions">
+                                <dl>
+                                    <dt>About This Product</dt>
+                                    <dd>
+                                        <p>{singleProduct.productDetails}</p>
+                                    </dd>
+                                </dl>
+                            </div>
                         </div>
                     </section>
                     <section id="details-page-order-section">
-                        <h6>In Stock</h6>
-                        <div className="qunatity-form-order">
-                            <input type="number" placeholder="quantity" name="order-quantity"/>
+                        <div className="product-stock">
+                            {
+                                singleProduct.quantity >= 1 ?
+                                <h6 style={{color: 'green'}}>In Stock</h6>
+                                :
+                                <h6 style={{color: 'red'}}>Out Of Stock</h6>
+                            }
                         </div>
-                        <div className="add-to-cart-and-buy-now-button">
-                            <button>Add To Cart</button>
-                            <button>Buy Now</button>
-                        </div>
-                        <div className="payment-secure-details">
+                        <form className="quantity-form">
+                            <label htmlFor="productQuantity">Product Quantity</label>
+                            <input type="number" placeholder="quantity" id="productQuantity" name="productQuantity"required />
+                            <input type="submit" value="Add To Cart" id="add-to-cart-btn" disabled/>
+                            <input type="submit" value="Order Now" id="order-now-btn"/>
+                        </form>                        
+                        <div className="payment-secure-details-and-other">
                             <h4><i class="fas fa-lock"></i> Secure transaction</h4>
-                            <h6>
-                                <small>Ships from</small>
-                                <small>GFresh</small>
-                            </h6>
-                            <h6>
-                                <small>Sold by</small>
-                                <small>GFresh</small>
-                            </h6>
+                            <table>
+                                <tr>
+                                    <td>Ship From :</td>
+                                    <td>GFresh</td>
+                                </tr>
+                                <tr>
+                                    <td>Sold By :</td>
+                                    <td>Gfresh</td>
+                                </tr>
+                            </table>
                         </div>
                     </section>
                 </div>

@@ -11,7 +11,7 @@ const SearchPageResult = () => {
     const [data, setData] = useState([]);
     const [searchParams] = useSearchParams()
     const productName = searchParams.get('productName');
-    const categoryName = searchParams.get('categoryName');      
+    const categoryName = searchParams.get('category');      
 
     useEffect(() => {
 
@@ -52,9 +52,9 @@ const SearchPageResult = () => {
                 <div className="totla-search-result-title">
                    {
                        productName ? 
-                       <h6>100 items found for {productName}</h6>
+                       <h6>{data.length} items found for {productName}</h6>
                        :
-                       <h6>100 items found for {categoryName}</h6>
+                       <h6>{data.length} items found for {categoryName}</h6>
                    }
                 </div>
                 <div className="search-page-result-normal-filter">

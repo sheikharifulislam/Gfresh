@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './productCategory.css';
 
 const ProductCategory = () => {
 
 
     const [categoryData, setCategoryData] = useState([]);
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetch('/productCategory.json')
@@ -13,6 +14,12 @@ const ProductCategory = () => {
         .then((data) => setCategoryData(data))
         .catch((error) => console.log(error.message))
     },[]);
+
+    const handleSingleCategory = (category) => {
+        navigate(`/search?category=${category}`, {
+            replace: true,
+        })
+    }
 
 
     return (
@@ -24,14 +31,14 @@ const ProductCategory = () => {
                 <div className="product-category-container">
                     {
                         categoryData.map((category) => (
-                            <NavLink to={`/search?categoryName=${category.categoryName}`} className="single-product-category" key={category.id}>
+                            <div className="single-product-category" key={category.id} onClick={() => handleSingleCategory(category.categoryName)}>
                                 <div className="product-category-image">
                                     <img src={category.categoryImage} alt={category.categoryName} />
                                 </div>
                                 <div className="product-category-name">
                                     <h5>{category.categoryName}</h5>
                                 </div>
-                            </NavLink>
+                            </div>
                         ))
                     }
                 </div>
