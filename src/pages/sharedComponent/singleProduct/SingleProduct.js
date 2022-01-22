@@ -1,14 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Rating, Stack } from '@mui/material';
 import './singleProduct.css';
 
 const SingleProduct = ({product}) => {
+
+    const navigate = useNavigate();
+        
     const offerRange = (mainPrice,offerPrice) => {
         return Math.round(((mainPrice - offerPrice) / mainPrice) * 100); 
     }
+
+    const handleSingleProduct = () => {
+        navigate(`/product-details/${product._id}`);
+    }
+
     return (
-        <NavLink to="/#" className="single-product">
+        <div className="single-product" onClick={handleSingleProduct}>
             <div className="single-product-container">
                 <div className="single-product-image">
                     <img src={`https://arcane-lake-20041.herokuapp.com/${product.productImage}`} alt={product.inTheBox} />
@@ -56,7 +64,7 @@ const SingleProduct = ({product}) => {
                     </div>
                 </div>
             </div>
-        </NavLink>
+        </div>
     );
 };
 

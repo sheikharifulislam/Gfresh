@@ -12,6 +12,7 @@ import Footer from "./pages/footer/Footer";
 import Home from './pages/home/Home';
 import LoginForm from "./pages/login/LoginForm";
 import Navbar from './pages/navbar/Navbar';
+import ProductDetails from "./pages/productDetails/ProductDetails";
 import Registration from "./pages/registration/Registration";
 import Reviews from "./pages/reviews/Reviews";
 import Search from "./pages/search/Search";
@@ -32,6 +33,7 @@ function App() {
             <Route path="registration" element={<Registration/>} />
             <Route path="search" element={<Search/>} />
             <Route path="add" element={<Product/>} />
+            <Route path="product-details/:productId" element={<ProductDetails/>} />
           </Routes>
           <Footer/>
       </Router>
