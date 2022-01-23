@@ -1,0 +1,20 @@
+[
+    {
+       "id": "1",
+       "bannerImage": "image/banner-1.jpg",
+       "offerName": "Specila Offer",
+       "offerRange": "upto 45% Off"
+    },
+    {
+        "id": "2",
+        "bannerImage": "image/banner-2.jpg",
+        "offerName": "Limited Sales",
+        "offerRange": "upto 60% Off"
+     },
+     {
+        "id": "3",
+        "bannerImage": "image/banner-3.jpg",
+        "offerName": "Cyclone Offer",
+        "offerRange": "upto 75% Off"
+     }
+]

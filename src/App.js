@@ -16,6 +16,7 @@ import ProductDetails from "./pages/productDetails/ProductDetails";
 import Registration from "./pages/registration/Registration";
 import Reviews from "./pages/reviews/Reviews";
 import Search from "./pages/search/Search";
+import ShippingInformations from "./pages/shippingInformations/ShippingInformations";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="search" element={<Search/>} />
             <Route path="add" element={<Product/>} />
             <Route path="product-details/:productId" element={<ProductDetails/>} />
+            <Route path="shipping/:orderProductId" element={<ShippingInformations/>} />
           </Routes>
           <Footer/>
       </Router>

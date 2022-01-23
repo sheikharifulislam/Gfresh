@@ -169,7 +169,7 @@ const useFirebase = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get(`https://arcane-lake-20041.herokuapp.com/check-admin?userEmail=${user.email}`)
+        axios.get(`https://arcane-lake-20041.herokuapp.com/check-admin?userEmail=${user?.email}`)
         .then((response) => {
             setAdmin(response.data);
             setIsLoading(false);

@@ -1,12 +1,16 @@
 import React from 'react';
 import FirebaseProvider from './FirebaseProvider';
+import OrderDataProvider from './OrderDataProvider';
 
 const Context = ({children}) => {
     return (
         <>
             <FirebaseProvider>
-                {children}
+                <OrderDataProvider>
+                    {children}
+                </OrderDataProvider>
             </FirebaseProvider>
+           
         </>
     );
 };

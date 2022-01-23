@@ -1,0 +1,67 @@
+#shipping-info-form {
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 130px;
+  padding: 20px 0 50px 0;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.shipping-info-form-title h2 {
+  text-align: center;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.shipping-info-form-design {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.shipping-info-form-design input {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 7px 0 10px 15px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.shipping-info-form-design label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.shipping-info-form-design:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shipping-info-form-design .shipping-city,
+.shipping-info-form-design .shipping-delivery-address {
+  width: 48%;
+}
+
+#shipping-info-send-btn {
+  padding: 12px 40px;
+  background-color: blue;
+  color: #fff;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-left: 40px;
+  cursor: pointer;
+}

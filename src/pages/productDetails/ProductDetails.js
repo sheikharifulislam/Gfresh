@@ -1,19 +1,39 @@
 import { Rating, Stack } from '@mui/material';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import { OrderDataContext } from '../../context/OrderDataProvider';
 import  './productDetails.css';
 
 const ProductDetails = () => {
 
     const {productId} = useParams();
+    const navigate = useNavigate();
     const [singleProduct, setSingleProduct] = useState({});
+    const [productQuantiy, setProductQuantity] = useState("");
+    const {setOrderData} = useContext(OrderDataContext);
+    
+    
+    const handleProductQuantityForm = e => {
+        e.preventDefault();        
+        const newOrderData = {
+            ...singleProduct,
+            orderQuantity: productQuantiy,
+        };
+        setOrderData(newOrderData);        
+        navigate(`/shipping/${singleProduct._id}`, {
+            replace: true,
+        })
+
+        e.target.reset();
+    }
+    
 
     useEffect(() => {
         axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productId=${productId}`)
         .then((response) => {
-            setSingleProduct(response.data);
+            setSingleProduct(response.data);                       
         })
         .catch((error) => {
             if(error.message) {
@@ -43,7 +63,7 @@ const ProductDetails = () => {
                             <div className="product-rating">
                                 <Stack>
                                     <Rating name="half-rating-read"
-                                    id="star"
+                                    
                                     defaultValue={
                                         singleProduct.reviewStar ? parseInt(singleProduct.reviewStar) /singleProduct.reviews.length : 0
                                     }
@@ -66,34 +86,36 @@ const ProductDetails = () => {
                         </div>
                         <div className="other-product-details">
                             <table>
-                                <tr>
-                                    <td>Brand</td>
-                                    <td>{singleProduct.brand}</td>
-                                </tr>
-                                <tr>
-                                    <td>Category</td>
-                                    <td>{singleProduct.category}</td>
-                                </tr>
-                                <tr>
-                                    <td>weight</td>
-                                    <td>{singleProduct.weight}</td>
-                                </tr>
-                                <tr>
-                                    <td>pack Size</td>
-                                    <td>{singleProduct.packSize}</td>
-                                </tr>
-                                <tr>
-                                    <td>country</td>
-                                    <td>{singleProduct.country}</td>
-                                </tr>
-                                <tr>
-                                    <td>flavour</td>
-                                    <td>{singleProduct.flavour}</td>
-                                </tr>
-                                <tr>
-                                    <td>in the box</td>
-                                    <td>{singleProduct.inTheBox}</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>Brand</td>
+                                        <td>{singleProduct.brand}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category</td>
+                                        <td>{singleProduct.category}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>weight</td>
+                                        <td>{singleProduct.weight}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>pack Size</td>
+                                        <td>{singleProduct.packSize}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>country</td>
+                                        <td>{singleProduct.country}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>flavour</td>
+                                        <td>{singleProduct.flavour}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>in the box</td>
+                                        <td>{singleProduct.inTheBox}</td>
+                                    </tr>
+                                </tbody>
                             </table >            
                             
                             <div className="product-descriptions">
@@ -115,23 +137,25 @@ const ProductDetails = () => {
                                 <h6 style={{color: 'red'}}>Out Of Stock</h6>
                             }
                         </div>
-                        <form className="quantity-form">
+                        <form className="quantity-form" onSubmit={handleProductQuantityForm}>
                             <label htmlFor="productQuantity">Product Quantity</label>
-                            <input type="number" placeholder="quantity" id="productQuantity" name="productQuantity"required />
+                            <input type="number" placeholder="quantity" id="productQuantity" name="productQuantity" onInput={(e) => setProductQuantity(e.currentTarget.value)} required />
                             <input type="submit" value="Add To Cart" id="add-to-cart-btn" disabled/>
                             <input type="submit" value="Order Now" id="order-now-btn"/>
                         </form>                        
                         <div className="payment-secure-details-and-other">
-                            <h4><i class="fas fa-lock"></i> Secure transaction</h4>
+                            <h4><i className="fas fa-lock"></i> Secure transaction</h4>
                             <table>
-                                <tr>
-                                    <td>Ship From :</td>
-                                    <td>GFresh</td>
-                                </tr>
-                                <tr>
-                                    <td>Sold By :</td>
-                                    <td>Gfresh</td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>Ship From :</td>
+                                        <td>GFresh</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sold By :</td>
+                                        <td>Gfresh</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </section>
