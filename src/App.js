@@ -17,6 +17,7 @@ import Registration from "./pages/registration/Registration";
 import Reviews from "./pages/reviews/Reviews";
 import Search from "./pages/search/Search";
 import ShippingInformations from "./pages/shippingInformations/ShippingInformations";
+import Payment from './pages/payment/Payment';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="add" element={<Product/>} />
             <Route path="product-details/:productId" element={<ProductDetails/>} />
             <Route path="shipping/:orderProductId" element={<ShippingInformations/>} />
+            <Route path="payment" element={<Payment/>} />
           </Routes>
           <Footer/>
       </Router>

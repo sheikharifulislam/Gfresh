@@ -1,0 +1,73 @@
+#payment-form-section {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 110px;
+  padding: 30px 0 50px 0;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.payment-form-title h2 {
+  font-weight: 400;
+  font-family: "Bitter", serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.payment-form-design {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.payment-form-design label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.payment-form-design .input {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0 10px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.payment-form-design:first-child {
+  grid-area: number;
+}
+
+.payment-form-design:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.payment-form-cvc,
+.payment-form-expiry-date {
+  width: 48%;
+}
+
+#payment-confirm-btn {
+  padding: 13px 35px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-image: linear-gradient(to right, #e40078, blue);
+  margin-top: 30px;
+  margin-left: 34px;
+  cursor: pointer;
+}

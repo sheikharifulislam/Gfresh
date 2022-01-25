@@ -1,25 +1,15 @@
 import React from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from './checkoutForm/CheckoutForm';
+
+const stripePromise = loadStripe('pk_test_51JxEmwFExVFWz35ALAJP7ja0wqSN0YNkunWjqBRq2EKgxWFwudBOcoMUbZq4ieWoX4fWm2aBWmNQG3sxtPykEcGR00unAeDLtf');
 
 const Payment = () => {
     return (
-        <section id="payment-form">
-            <form action="">
-                <div className="payment-form-design">
-                    <label htmlFor="card-number">Card Number</label>
-                    <input type="number" name="cardNumber" id="card-number" />
-                </div>
-                <div className="payment-form-desing">
-                    <div className="payment-form-cvc">
-                        <label htmlFor="cvc-number">CVC Number</label>
-                        <input type="number" name="cvcNumber" id="cvc-number" />
-                    </div>
-                    <div className="payment-form-expiry-date">
-                        <label htmlFor="expiry-date">Expiry Date</label>
-                        <input type="date" name="expiryDate" id="expiry-date" />
-                    </div>
-                </div>
-            </form>
-        </section>
+        <Elements stripe={stripePromise}>
+            <CheckoutForm />
+        </Elements>
     );
 };
 
