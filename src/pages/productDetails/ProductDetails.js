@@ -1,4 +1,4 @@
-import { Rating, Stack } from '@mui/material';
+import { Rating } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -33,7 +33,7 @@ const ProductDetails = () => {
     useEffect(() => {
         axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productId=${productId}`)
         .then((response) => {
-            setSingleProduct(response.data);                       
+            setSingleProduct(response.data);                                      
         })
         .catch((error) => {
             if(error.message) {
@@ -61,15 +61,13 @@ const ProductDetails = () => {
                                 <h2>{singleProduct.productName}</h2>
                             </div>
                             <div className="product-rating">
-                                <Stack>
-                                    <Rating name="half-rating-read"
-                                    
-                                    defaultValue={
-                                        singleProduct.reviewStar ? parseInt(singleProduct.reviewStar) /singleProduct.reviews.length : 0
+                                <Rating name="half-rating-read" defaultValue={
+                                        singleProduct.reviewStar >= 1 ? (singleProduct.reviewStar / singleProduct.reviews.length) : 0
                                     }
                                     precision={0.5}
+                                    size="small"
                                     readOnly />
-                                </Stack>
+                                
                                 <div className="product-rating-comment">
                                     <small>({singleProduct.reviews?.length})</small>
                                 </div>
@@ -160,6 +158,30 @@ const ProductDetails = () => {
                         </div>
                     </section>
                 </div>
+                {
+                    singleProduct.reviews?.length >= 1 &&
+                    <section id="product-reviews-section">
+                        <div className="product-review-section-title">
+                            <h2>Product Reviews</h2>
+                        </div>
+                        {
+                            singleProduct.reviews?.map((data) => (
+                                <div className="single-product-review" key={data._id}>
+                                    <div className="product-review-rating">
+                                        <Rating name="half-rating-read" defaultValue={parseInt(data.reviewStar)} precision={0.5} size="small" readOnly />
+                                        
+                                    </div>
+                                    <div className="product-review-customar-name">
+                                        <h3>{data.userName}</h3>
+                                    </div>                                
+                                    <div className="product-review-details">
+                                        <p>{data.userReview}</p>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </section>
+                }
             </div>
         </section>
     );

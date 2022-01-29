@@ -132,3 +132,35 @@
   width: 120px;
   font-size: 12px;
 }
+
+#product-reviews-section {
+  margin-top: 100px;
+}
+
+.product-review-section-title h2 {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.single-product-review {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-bottom: none;
+}
+
+.single-product-review:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-review-customar-name h3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 10px;
+}
+
+.product-review-details p {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 10px;
+}
