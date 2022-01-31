@@ -1,9 +1,8 @@
 import { Rating } from '@mui/material';
 import axios from 'axios';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
-import { OrderDataContext } from '../../context/OrderDataProvider';
 import  './productDetails.css';
 
 const ProductDetails = () => {
@@ -11,17 +10,16 @@ const ProductDetails = () => {
     const {productId} = useParams();
     const navigate = useNavigate();
     const [singleProduct, setSingleProduct] = useState({});
-    const [productQuantiy, setProductQuantity] = useState("");
-    const {setOrderData} = useContext(OrderDataContext);
+    const [productQuantiy, setProductQuantity] = useState("");   
     
     
     const handleProductQuantityForm = e => {
         e.preventDefault();        
         const newOrderData = {
-            ...singleProduct,
+            productId: singleProduct._id,
             orderQuantity: productQuantiy,
         };
-        setOrderData(newOrderData);        
+        localStorage.setItem('orderData',JSON.stringify(newOrderData));       
         navigate(`/shipping/${singleProduct._id}`, {
             replace: true,
         })

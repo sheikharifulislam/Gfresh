@@ -1,11 +1,12 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { OrderDataContext } from '../../context/OrderDataProvider';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './shippingInformations.css';
 
 const ShippingInformations = () => {
 
-    const [shippingData, setShippingData] = useState({});
-    const {orderData, setOrderData} = useContext(OrderDataContext);
+    const [shippingData, setShippingData] = useState({});    
+    const navigate = useNavigate();
     
 
     const handleInput = e => {
@@ -18,19 +19,24 @@ const ShippingInformations = () => {
 
     const handleShippingForm = e => {
         e.preventDefault();
+        let orderData = localStorage.getItem('orderData');
+        orderData = JSON.parse(orderData);
         const newOrderData = {
             ...orderData,
             shippingData: {
                 ...shippingData,
             }
         };
-        setOrderData(newOrderData);
+
+        localStorage.setItem('orderData',JSON.stringify(newOrderData));
+       
+        navigate('/payment',{
+            replace: true,
+        })
         
     }
 
-    useEffect(() => {
-        console.log(orderData);
-    },[orderData])
+  
     
     return (
         <section id="shipping-info-form">
