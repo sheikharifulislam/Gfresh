@@ -1,0 +1,21 @@
+#dashboard-menu ul li {
+  list-style: none;
+  font-size: 16px;
+  line-height: 30px;
+  margin-left: 20px;
+  font-weight: 400;
+  color: #333;
+  font-family: "Bitter", serif;
+}
+#dashboard-menu ul li a {
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #333;
+  font-family: "Bitter", serif;
+}
+
+#dashboard-menu ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -28,7 +28,7 @@ const Payment = () => {
 
     return (
         <Elements stripe={stripePromise}>
-            <CheckoutForm singleProduct={singleProduct} orderQuantity={orderData.orderQuantity} />
+            <CheckoutForm singleProduct={singleProduct} orderData={orderData} />
         </Elements>
     );
 };

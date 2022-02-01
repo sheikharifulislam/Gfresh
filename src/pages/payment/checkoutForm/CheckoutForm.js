@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const CheckoutForm = ({singleProduct, orderQuantity}) => {
+const CheckoutForm = ({singleProduct, orderData}) => {
     const stripe = useStripe();
     const elements = useElements();
     const [clientSecret, setClientSecret] = useState('');
@@ -17,12 +17,12 @@ const CheckoutForm = ({singleProduct, orderQuantity}) => {
     useEffect(() => {
       axios.post(`http://localhost:5000/create-payment-intent`,{
         amount: singleProduct.offerPrice,
-        quantity: orderQuantity,
+        quantity: orderData.orderQuantity,
       })
       .then((response) => {
         setClientSecret(response.data.clientSecret);
       })
-    }, [singleProduct.offerPrice, orderQuantity])
+    }, [singleProduct.offerPrice, orderData.orderQuantity])
    
 
     const handleSubmit = async (e) => {    
@@ -37,10 +37,10 @@ const CheckoutForm = ({singleProduct, orderQuantity}) => {
         return;
       }
 
-      // serPaymentProcessing(true);
+      serPaymentProcessing(true);
 
       // Use your card Element with other Stripe.js APIs
-      const {error, paymentMethod} = await stripe.createPaymentMethod({
+      const {error} = await stripe.createPaymentMethod({
         type: 'card',
         card,
       });
@@ -69,33 +69,43 @@ const CheckoutForm = ({singleProduct, orderQuantity}) => {
       )
 
       if(paymentIntent) {
-        // serPaymentProcessing(false);
-        localStorage.removeItem('orderData');
-        swal({
-          icon: 'success',
-          text: 'succefully payment',
-          button: 'Continue Shopping',
-        })
-        .then(() => {
-          navigate('/home', {
-            replace: true,
-          })
+        serPaymentProcessing(false);
+        const newOrderData = {
+          ...singleProduct,
+          orderInfo: {
+            ...orderData,
+          }
+        }
+        delete newOrderData._id;
+        delete newOrderData.orderInfo.productId;
+        delete newOrderData.quantity;
+
+        
+        axios.post(`http://localhost:5000/add-order?productId=${singleProduct._id}`,newOrderData)
+        .then((response) => {
+          if(response.data.result.insertedId && response.data.updateProductQuantity.modifiedCount >= 1) {
+            localStorage.removeItem('orderData');
+            swal({
+              icon: 'success',
+              text: 'succefully payment',
+              button: 'Continue Shopping',
+            })
+            .then(() => {
+              navigate('/home', {
+                replace: true,
+              })
+            })
+          }
         })        
       }
       else if(confirmError) {
-        // serPaymentProcessing(false);
+        serPaymentProcessing(false);
         swal({
           icon: 'warning',
           text: 'Payment Field Please Try again',
           button: 'ok',
         })
       }
-
-     
-    
-
-    
-
     };
     
     
@@ -120,7 +130,7 @@ const CheckoutForm = ({singleProduct, orderQuantity}) => {
                       <CardCvcElement className="input"  />
                   </div>                    
               </div>
-              <input type="submit" value="pay" id="payment-confirm-btn" disabled={!stripe } />
+              <input type="submit" value={paymentProcessing ? 'pay...' : 'pay'} id="payment-confirm-btn" disabled={!stripe || paymentProcessing} />
           </form>
       </section>
     );
