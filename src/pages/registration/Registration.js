@@ -83,7 +83,7 @@ const Registration = () => {
                         </div>
                         <div className="single-registration-input-area">
                            <label htmlFor="city">Your City</label>
-                           <input type="text" placeholder="Enter Your City Name" name="city" id="city" onInput={handleInput} />
+                           <input type="text" placeholder="Enter Your City Name" name="city" id="city" onInput={handleInput} required />
                         </div>
                     </div>
                     <div className="registration-form-design">
@@ -97,7 +97,7 @@ const Registration = () => {
                        </div>
                        <div className="single-registration-input-area">
                             <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input type="password" placeholder="Confirm Your Password" name="confirmPassword" id="confirmPassword" onInput={handleInput} />
+                            <input type="password" placeholder="Confirm Your Password" name="confirmPassword" id="confirmPassword" onInput={handleInput} required />
                             {
                                 registrationError.passwordMatchError && 
                                 <small>{registrationError.passwordMatchError}</small>

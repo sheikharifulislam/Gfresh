@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,6 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {NavLink, useLocation, useNavigate} from 'react-router-dom';
 import {Outlet} from 'react-router-dom';
+import {FirebaseContext} from '../../context/FirebaseProvider';
 import './dashboard.css';
 
 
@@ -20,10 +21,17 @@ const drawerWidth = 240;
 const Dashboard = (props) => {
     const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const {logOut} = useContext(FirebaseContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const handleLogout = () => {
+    logOut(navigate, location);
+  }
 
  
 
@@ -58,7 +66,7 @@ const Dashboard = (props) => {
                     <li>
                         <NavLink to="add-new-admin">Add Admin</NavLink>
                     </li>
-                  <li>Log Out</li>                 
+                    <li onClick={() => handleLogout(navigate,location)}>Log Out</li>                 
               </ul>
           </nav>       
                  

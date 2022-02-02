@@ -20,13 +20,14 @@ import Search from "./pages/search/Search";
 import ShippingInformations from "./pages/shippingInformations/ShippingInformations";
 import Payment from './pages/payment/Payment';
 import Dashboard from './pages/dashboard/Dashboard';
+import DashboardHome from "./pages/dashboard/dashboradHome/DashboardHome";
 
 
 function App() {
   return (
     <Context>
         <Router>
-        <Navbar/>
+        {/* <Navbar/> */}
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="home" element={<Home/>}/>
@@ -41,9 +42,11 @@ function App() {
             <Route path="product-details/:productId" element={<ProductDetails/>} />
             <Route path="shipping/:orderProductId" element={<ShippingInformations/>} />
             <Route path="payment" element={<Payment/>} />
-            <Route path="dashboard/*" element={<Dashboard/>} />
+            <Route path="dashboard/*" element={<Dashboard/>}>
+                <Route path="" element={<DashboardHome/>} />
+            </Route>
           </Routes>
-          <Footer/>
+          {/* <Footer/> */}
       </Router>
     </Context>
   );

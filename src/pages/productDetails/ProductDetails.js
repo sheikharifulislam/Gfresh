@@ -137,7 +137,7 @@ const ProductDetails = () => {
                             <label htmlFor="productQuantity">Product Quantity</label>
                             <input type="number" placeholder="quantity" id="productQuantity" name="productQuantity" onInput={(e) => setProductQuantity(e.currentTarget.value)} required />
                             <input type="submit" value="Add To Cart" id="add-to-cart-btn" disabled/>
-                            <input type="submit" value="Order Now" id="order-now-btn"/>
+                            <input type="submit" value="Order Now" id="order-now-btn" disabled={singleProduct.quantity >= 1 ? false : true} /> 
                         </form>                        
                         <div className="payment-secure-details-and-other">
                             <h4><i className="fas fa-lock"></i> Secure transaction</h4>

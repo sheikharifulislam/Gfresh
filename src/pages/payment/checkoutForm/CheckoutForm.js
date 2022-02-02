@@ -51,6 +51,7 @@ const CheckoutForm = ({singleProduct, orderData}) => {
           icon: "warning",          
           buttons: 'ok',        
         })
+        serPaymentProcessing(false);
       } 
 
        //payment intent 
@@ -61,8 +62,11 @@ const CheckoutForm = ({singleProduct, orderData}) => {
           payment_method: {
             card,
             billing_details: {
-              name: user.displayName,
-              email: user.email,
+              name: user?.displayName,
+              email: user?.email,
+              address: {
+                city: user?.city,
+              }
             }
           }
         }
@@ -71,9 +75,16 @@ const CheckoutForm = ({singleProduct, orderData}) => {
       if(paymentIntent) {
         serPaymentProcessing(false);
         const newOrderData = {
-          ...singleProduct,
+          productInfo: {
+            ...singleProduct,
+          },          
           orderInfo: {
             ...orderData,
+            ordateDate: new Date().toLocaleDateString(),
+            orderStatus: 'pending',
+          },
+          userInfo: {
+            userEmail: user.email,
           }
         }
         delete newOrderData._id;
