@@ -1,8 +1,7 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  useLocation
+  Route,  
 } from "react-router-dom";
 import Context from "./context/Context";
 import Product from "./demo/Product";
@@ -21,6 +20,7 @@ import ShippingInformations from "./pages/shippingInformations/ShippingInformati
 import Payment from './pages/payment/Payment';
 import Dashboard from './pages/dashboard/Dashboard';
 import DashboardHome from "./pages/dashboard/dashboradHome/DashboardHome";
+import AddProduct from "./pages/dashboard/addProduct/AddProduct";
 
 
 function App() {
@@ -44,6 +44,7 @@ function App() {
             <Route path="payment" element={<Payment/>} />
             <Route path="dashboard/*" element={<Dashboard/>}>
                 <Route path="" element={<DashboardHome/>} />
+                <Route path="add-product" element={<AddProduct/>} />
             </Route>
           </Routes>
           {/* <Footer/> */}

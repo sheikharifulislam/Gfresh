@@ -1,0 +1,116 @@
+.add-new-product-section-title h2 {
+  text-transform: capitalize;
+  font-family: "Cormorant", serif;
+  font-size: 30px;
+  margin: 30px 0 15px 0;
+}
+
+.add-product-area {
+  background-color: #f5f5f5;
+  overflow: hidden;
+  padding: 50px 60px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.add-product-form-design {
+  width: 45%;
+}
+.add-product-form-design label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.add-product-form-design input[type="text"],
+.add-product-form-design input[type="number"],
+.add-product-form-design select {
+  width: 80%;
+  padding: 15px 0 15px 15px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border: 2px solid #eee;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.file-upload-button-design {
+  position: relative;
+}
+
+#file-upload-button {
+  width: 130px;
+  height: 45px;
+  background-color: #333;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#file-upload-button img {
+  height: 60%;
+}
+
+#product-image::-webkit-file-upload-button {
+  padding: 13px 29px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.add-product-form-design textarea {
+  resize: none;
+  border: 2px solid #eee;
+  padding: 10px 0 0 15px;
+  outline: none;
+}
+
+/* .add-product-form-design input[type="file"] {
+    visibility: hidden;
+  } */
+
+#add-new-product-button {
+  padding: 14px 30px;
+  position: relative;
+  bottom: -15px;
+  left: 88%;
+  background-color: dodgerblue;
+  color: #fff;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 0 0 40px #eee;
+}
