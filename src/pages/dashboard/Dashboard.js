@@ -52,7 +52,7 @@ const Dashboard = (props) => {
                         <NavLink to="all-orders">All Orders</NavLink>
                     </li>
                     <li>
-                        <NavLink to="all-products">All Products</NavLink>
+                        <NavLink to="manage-all-products">Manage All Products</NavLink>
                     </li>
                     <li>
                         <NavLink to="pending-orders">Pending Orders</NavLink>

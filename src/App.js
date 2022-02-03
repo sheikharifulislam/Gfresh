@@ -4,7 +4,6 @@ import {
   Route,  
 } from "react-router-dom";
 import Context from "./context/Context";
-import Product from "./demo/Product";
 import About from "./pages/about/About";
 import Blogs from "./pages/blogs/Blogs";
 import Contact from "./pages/Contact/Contact";
@@ -21,6 +20,7 @@ import Payment from './pages/payment/Payment';
 import Dashboard from './pages/dashboard/Dashboard';
 import DashboardHome from "./pages/dashboard/dashboradHome/DashboardHome";
 import AddProduct from "./pages/dashboard/addProduct/AddProduct";
+import ManageAllProducts from "./pages/dashboard/manageAllProducts/ManageAllProducts";
 
 
 function App() {
@@ -37,14 +37,14 @@ function App() {
             <Route path="blogs" element={<Blogs/>} />
             <Route path="login" element={<LoginForm/>} />
             <Route path="registration" element={<Registration/>} />
-            <Route path="search" element={<Search/>} />
-            <Route path="add" element={<Product/>} />
+            <Route path="search" element={<Search/>} />           
             <Route path="product-details/:productId" element={<ProductDetails/>} />
             <Route path="shipping/:orderProductId" element={<ShippingInformations/>} />
             <Route path="payment" element={<Payment/>} />
             <Route path="dashboard/*" element={<Dashboard/>}>
                 <Route path="" element={<DashboardHome/>} />
                 <Route path="add-product" element={<AddProduct/>} />
+                <Route path="manage-all-products" element={<ManageAllProducts/>} />
             </Route>
           </Routes>
           {/* <Footer/> */}
