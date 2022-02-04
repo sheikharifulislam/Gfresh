@@ -28,7 +28,7 @@ const SingleProduct = ({product}) => {
                     <div className="single-product-price">
                         <div className="single-product-offer-price">
                             {
-                                product.offerPrice < product.mainPrice ?
+                                product.offerPrice !== null ?
                                 (
                                     <h5>${product.offerPrice}</h5>
                                 )
@@ -39,7 +39,7 @@ const SingleProduct = ({product}) => {
                             }
                         </div>
                         {
-                            product.offerPrice < product.mainPrice &&
+                            product.offerPrice !== null &&
                                 <div className="single-product-main-price">
                                     <del><small>${product.mainPrice}</small></del>
                                     <small id="offer-range">-{offerRange(product.mainPrice,product.offerPrice)}%</small>

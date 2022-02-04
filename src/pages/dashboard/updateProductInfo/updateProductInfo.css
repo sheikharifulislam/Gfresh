@@ -1,11 +1,11 @@
-.add-new-product-section-title h2 {
+.update-product-section-title h2 {
   text-transform: capitalize;
   font-family: "Cormorant", serif;
   font-size: 30px;
   margin: 30px 0 15px 0;
 }
 
-.add-product-area {
+.update-product-area {
   background-color: #f5f5f5;
   overflow: hidden;
   padding: 50px 60px;
@@ -20,19 +20,19 @@
   position: relative;
 }
 
-.add-product-form-design {
+.update-product-form-design {
   width: 45%;
 }
-.add-product-form-design label {
+.update-product-form-design label {
   display: block;
   margin-bottom: 5px;
   margin-top: 15px;
   font-family: "Roboto", sans-serif;
 }
 
-.add-product-form-design input[type="text"],
-.add-product-form-design input[type="number"],
-.add-product-form-design input[list="category"] {
+.update-product-form-design input[type="text"],
+.update-product-form-design input[type="number"],
+.update-product-form-design input[list="category"] {
   width: 80%;
   padding: 15px 0 15px 15px;
   border-radius: 7px;
@@ -88,18 +88,18 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.add-product-form-design textarea {
+.update-product-form-design textarea {
   resize: none;
   border: 2px solid #eee;
   padding: 10px 0 0 15px;
   outline: none;
 }
 
-/* .add-product-form-design input[type="file"] {
-    visibility: hidden;
-  } */
+/* .update-product-form-design input[type="file"] {
+      visibility: hidden;
+    } */
 
-#add-new-product-button {
+#update-product-button {
   padding: 14px 30px;
   position: relative;
   bottom: -15px;

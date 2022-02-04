@@ -73,7 +73,7 @@ const ProductDetails = () => {
                             </div>
                             <div className="product-general-feature-product-price">
                                 {
-                                    singleProduct.offerPrice !== singleProduct.mainPrice ?
+                                    singleProduct.offerPrice !== null ?
                                     <small>Price: {singleProduct.offerPrice}$</small>
                                     :
                                     <small>Price: {singleProduct.mainPrice }$</small>

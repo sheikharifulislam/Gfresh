@@ -19,7 +19,7 @@ const AddProduct = () => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault();       
         const formData = new FormData();
         for(let key in productData) {
             formData.append(key, productData[key]);
@@ -38,7 +38,7 @@ const AddProduct = () => {
         })
         .catch(() => {
             swal({
-                icon: 'warning',
+                icon: 'error',
                 text: 'Something went wrong Please Reload Add Try Again',
                 button: 'ok',
             })
@@ -59,8 +59,8 @@ const AddProduct = () => {
                             </div>
                             <div className="add-product-form-design">
                                 <label htmlFor="product-category">Product Category</label>
-                                <select name="category" id="product-category" onInput={handleInput}>
-                                    <option value="Selete Category">Select Category</option>
+                                <input list="category" placeholder='Select Product Category' name="category" id="product-category" onInput={handleInput} required />
+                                <datalist id="category">                                    
                                     <option value="Rice">Rice</option>
                                     <option value="Spices">Spices</option>
                                     <option value="Vegetables">Vegetables</option>
@@ -75,7 +75,7 @@ const AddProduct = () => {
                                     <option value="Mustard">Mustard</option>
                                     <option value="Milk">Milk</option>
                                     <option value="Cold Drink">Cold Drink</option>
-                                </select>
+                                </datalist>
                             </div>
                             <div className="add-product-form-design">
                                 <label htmlFor="product-brand">Product Brand</label>

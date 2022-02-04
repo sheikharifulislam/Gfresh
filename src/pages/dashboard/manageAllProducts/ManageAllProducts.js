@@ -10,21 +10,28 @@ import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 import swal from 'sweetalert';
 import './manageAllProduct.css';
+import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
+import { useNavigate } from 'react-router-dom';
 
 const ManageAllProducts = () => {
 
     const [allProducts, setAllProducts] = useState([]);
     const [totalPage, setTotalPage] = useState(0);
     const [currentPage, setCurrentPage] = useState(0);
-    const deleteRef = useRef(null);
+    const [dataLoading, setDataLoading] = useState(true);
+    const childRef = useRef(null);
+    // const childDeleteRef = useRef(false);
+    const navigate = useNavigate()  
     const size = 15;
 
     useEffect(() => {
+        setDataLoading(true);
         axios.get(`http://localhost:5000/manage-all-products?currentPage=${currentPage}&&size=${size}`)
         .then((response) => {
             setAllProducts(response.data.allProducts);            
             const totalPageNumber = Math.ceil(response.data.count / size);
             setTotalPage(totalPageNumber);
+            setDataLoading(false);
         })
         .catch(() => {
             swal({
@@ -32,13 +39,19 @@ const ManageAllProducts = () => {
                 text: 'Something went wrong Please Reload And Try Again',
                 button: 'ok',
             })
+            setDataLoading(false);
+        })
+        .finally(() => {
+            setDataLoading(false);
         })
     }, [currentPage]);
 
-    const handleProductDelete = (id,imagePath) => {        
+    if(dataLoading)return <CircularLoader height="90vh" />
+
+    const handleProductDelete = (id,imagePath) => {             
         swal({
             text: 'Are You Sure You Want To Delete The Product ?',
-            buttons: ['No', 'Sure']
+            buttons: ['Cancle', 'Sure']
         })
         .then((value) => {
             if(value) {
@@ -49,9 +62,10 @@ const ManageAllProducts = () => {
                            icon: 'success',
                            text: 'Succefully Delete the Product',
                            button: 'ok',
-                       })
-                       deleteRef.current.parentElement.parentElement.remove();     
-                   }
+                       })   
+                                           
+                       childRef.current.parentElement.parentElement.remove();
+                    }
                 })
                 .catch(() => {
                     swal({
@@ -61,6 +75,12 @@ const ManageAllProducts = () => {
                     })
                 })
             }
+        })
+    }
+
+    const handleUpdateButton = (id)=> {
+        navigate(`/dashboard/update-product-info/${id}`, {
+            replace: true,
         })
     }
     
@@ -103,7 +123,8 @@ const ManageAllProducts = () => {
                                         backgroundColor: 'dodgerblue',
                                         color: '#f5f5f5',
                                         }}
-                                        variant="outlined"                                        
+                                        variant="outlined"
+                                        onClick={() => handleUpdateButton(data._id)}                                        
                                         >
                                             Update
                                     </Button> 
@@ -114,7 +135,7 @@ const ManageAllProducts = () => {
                                         }}
                                         variant="outlined"
                                         onClick={() => handleProductDelete(data._id, data.productImage)}                                       
-                                        ref={deleteRef}
+                                        ref={childRef}
                                         >
                                             Delete
                                     </Button>                        

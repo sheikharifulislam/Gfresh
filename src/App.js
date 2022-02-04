@@ -21,6 +21,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import DashboardHome from "./pages/dashboard/dashboradHome/DashboardHome";
 import AddProduct from "./pages/dashboard/addProduct/AddProduct";
 import ManageAllProducts from "./pages/dashboard/manageAllProducts/ManageAllProducts";
+import UpdateProductInfo from "./pages/dashboard/updateProductInfo/UpdateProductInfo";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                 <Route path="" element={<DashboardHome/>} />
                 <Route path="add-product" element={<AddProduct/>} />
                 <Route path="manage-all-products" element={<ManageAllProducts/>} />
+                <Route path="update-product-info/:productId" element={<UpdateProductInfo/>} />
             </Route>
           </Routes>
           {/* <Footer/> */}
