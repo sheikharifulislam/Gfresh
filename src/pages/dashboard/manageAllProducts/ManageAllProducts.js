@@ -26,7 +26,7 @@ const ManageAllProducts = () => {
 
     useEffect(() => {
         setDataLoading(true);
-        axios.get(`http://localhost:5000/manage-all-products?currentPage=${currentPage}&&size=${size}`)
+        axios.get(`https://arcane-lake-20041.herokuapp.com/manage-all-products?currentPage=${currentPage}&&size=${size}`)
         .then((response) => {
             setAllProducts(response.data.allProducts);            
             const totalPageNumber = Math.ceil(response.data.count / size);
@@ -55,7 +55,7 @@ const ManageAllProducts = () => {
         })
         .then((value) => {
             if(value) {
-                axios.delete(`http://localhost:5000/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
+                axios.delete(`https://arcane-lake-20041.herokuapp.com/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
                 .then((response) => {
                    if(response.data.deletedCount) {
                        swal({

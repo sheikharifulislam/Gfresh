@@ -15,7 +15,7 @@ const CheckoutForm = ({singleProduct, orderData}) => {
     const [paymentProcessing, serPaymentProcessing] = useState(false);
 
     useEffect(() => {
-      axios.post(`http://localhost:5000/create-payment-intent`,{
+      axios.post(`https://arcane-lake-20041.herokuapp.com/create-payment-intent`,{
         amount: singleProduct.offerPrice,
         quantity: orderData.orderQuantity,
       })

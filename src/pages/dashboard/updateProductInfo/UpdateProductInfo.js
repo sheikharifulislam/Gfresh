@@ -12,7 +12,7 @@ const UpdateProductInfo = () => {
     useEffect(() => {
         axios.get(`http://localhost:5000/all-products?productId=${productId}`)
         .then((response) => {
-            setProductData(response.data);
+            setProductData(response.data);            
         })
         .catch((error) => {
             swal({
@@ -22,6 +22,7 @@ const UpdateProductInfo = () => {
             })
         })
     }, [productId])
+      
 
     const handleInput = e => {
         const key = e.target.name;
@@ -32,18 +33,18 @@ const UpdateProductInfo = () => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault();       
+        e.preventDefault();         
         const formData = new FormData();
         for(let key in productData) {
             formData.append(key, productData[key]);
         }
-        formData.append("productImage",file);
-        axios.post(`http://localhost:5000/update-product`,formData)
+        formData.append("productImage",file);      
+        axios.patch(`http://localhost:5000/update-product-info?productId=${productData._id}&&imagePath=${productData.productImage}`,{productData,file})
         .then((response) => {
             if(response.data.insertedId) {
                 swal({
                     icon: 'success',
-                    text: 'Successfully Product updateed',
+                    text: 'Successfully updated Product Info',
                     button: 'ok',
                 });
                 e.target.reset();
@@ -64,7 +65,7 @@ const UpdateProductInfo = () => {
           <div className="update-product-section-title">
                 <h2>Update New Product</h2>
                 <div className="update-product-container">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="update-product-area">
                             <div className="update-product-form-design">
                                 <label htmlFor="product-name">Product Name</label>
@@ -132,7 +133,7 @@ const UpdateProductInfo = () => {
                                     <button id="file-upload-button">
                                         <img src="/image/cloud-upload-outline-1.png" alt="fil-upload" />
                                     </button>
-                                    <input type="file" name="ProductImage" id="product-image" onInput={(e) => setFile(e.target.files[0])} required />                                    
+                                    <input type="file" name="ProductImage" id="product-image" onInput={(e) => setFile(e.target.files[0])} />                                    
                                 </div>    
                             </div>
                             <div className="update-product-form-design">
