@@ -46,7 +46,7 @@ const ManageAllProducts = () => {
         })
     }, [currentPage]);
 
-    if(dataLoading)return <CircularLoader height="90vh" />
+    if(dataLoading)return <CircularLoader height="900px" />
 
     const handleProductDelete = (id,imagePath) => {             
         swal({

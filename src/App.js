@@ -28,7 +28,7 @@ function App() {
   return (
     <Context>
         <Router>
-        {/* <Navbar/> */}
+        <Navbar/>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="home" element={<Home/>}/>
@@ -49,7 +49,7 @@ function App() {
                 <Route path="update-product-info/:productId" element={<UpdateProductInfo/>} />
             </Route>
           </Routes>
-          {/* <Footer/> */}
+          <Footer/>
       </Router>
     </Context>
   );

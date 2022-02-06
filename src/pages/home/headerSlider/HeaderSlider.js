@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
-
+import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './headerSlider.css';
 
 const HeaderSlider = () => {
@@ -63,6 +63,10 @@ const HeaderSlider = () => {
                     ))
                 }
             </div>
+            {
+                sliderData < 1 &&
+                <CircularLoader position="relative" height="520px" />
+            }
         </div>
     );
 };

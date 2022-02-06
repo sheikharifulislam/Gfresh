@@ -14,9 +14,7 @@ const AllProducts = () => {
         .catch((error) => console.log(error.message))
     }, []); 
 
-    if(allProductData.length < 1) {
-        return <CircularLoader/>
-    }
+    
 
     return (
         <section id="all-products-section">
@@ -30,6 +28,10 @@ const AllProducts = () => {
                     }
                 </div>
             </div>
+            {
+                allProductData < 1 &&
+                <CircularLoader position="relative" height="500px" />
+            }
         </section>
     );
 };
