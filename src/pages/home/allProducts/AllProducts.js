@@ -29,7 +29,7 @@ const AllProducts = () => {
                 </div>
             </div>
             {
-                allProductData < 1 &&
+                allProductData.length < 1 &&
                 <CircularLoader position="relative" height="500px" />
             }
         </section>

@@ -64,7 +64,7 @@ const HeaderSlider = () => {
                 }
             </div>
             {
-                sliderData < 1 &&
+                sliderData.length < 1 &&
                 <CircularLoader position="relative" height='100%' />
             }
         </div>
