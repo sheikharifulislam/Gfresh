@@ -40,34 +40,36 @@ const HeaderSlider = () => {
       }, [count]);
 
     return (
-        <div id="header-slider" style={{backgroundImage: 'url("image/home-bg.jpg")'}}>
-            <div className="slider-container" style={{
-                position: 'relative',
-                top: '0',
-                right: count * 100 + '%',
-            }}>
-                {
-                    sliderData.map((data) => (
-                        <div className="slide" key={data._id}>
-                            <div className="slide-container">
-                                <div className="content">
-                                    <span>{data.sliderTitle}</span>
-                                    <h3>{data.offerRange}</h3>
-                                    <button>Shop Now</button>
-                                </div>
-                                <div className="slide-image">
-                                    <img src={`https://arcane-lake-20041.herokuapp.com/${data.sliderImage}`} alt="current offer slider thumbnail" />
+        <>
+            <div id="header-slider" style={{backgroundImage: 'url("image/home-bg.jpg")'}}>
+                <div className="slider-container" style={{
+                    position: 'relative',
+                    top: '0',
+                    right: count * 100 + '%',
+                }}>
+                    {
+                        sliderData.map((data) => (
+                            <div className="slide" key={data._id}>
+                                <div className="slide-container">
+                                    <div className="content">
+                                        <span>{data.sliderTitle}</span>
+                                        <h3>{data.offerRange}</h3>
+                                        <button>Shop Now</button>
+                                    </div>
+                                    <div className="slide-image">
+                                        <img src={`https://arcane-lake-20041.herokuapp.com/${data.sliderImage}`} alt="current offer slider thumbnail" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>            
             </div>
             {
                 sliderData.length < 1 &&
-                <CircularLoader position="relative" height='100%' />
+                <CircularLoader position="relative" height='520px' />
             }
-        </div>
+        </>
     );
 };
 
