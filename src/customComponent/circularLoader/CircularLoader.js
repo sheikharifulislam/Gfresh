@@ -8,7 +8,8 @@ const CircularLoader = ({position = 'absolute', height = null}) => {
         height: height,
         position: position,
         top: '0',
-        left: '0',        
+        left: '0',
+        border: '1px solid red',           
     }
 
     const CircularProgressStyle={       

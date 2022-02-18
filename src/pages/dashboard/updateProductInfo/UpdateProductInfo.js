@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import './updateProductInfo.css';
 
@@ -8,18 +8,19 @@ const UpdateProductInfo = () => {
     const {productId} = useParams();
     const [productData, setProductData] = useState({});
     const [file, setFile] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get(`http://localhost:5000/all-products?productId=${productId}`)
         .then((response) => {
             setProductData(response.data);            
         })
-        .catch((error) => {
+        .catch(() => {
             swal({
                 icon: 'error',
                 text: 'Something went wrong Please Reload update Try Again',
                 button: 'ok',
-            })
+            })           
         })
     }, [productId])
       
@@ -33,29 +34,34 @@ const UpdateProductInfo = () => {
     }
 
     const handleSubmit = e => {
-        e.preventDefault();         
+        e.preventDefault();               
         const formData = new FormData();
         for(let key in productData) {
             formData.append(key, productData[key]);
         }
         formData.append("productImage",file);      
-        axios.patch(`http://localhost:5000/update-product-info?productId=${productData._id}&&imagePath=${productData.productImage}`,{productData,file})
+        axios.patch(`http://localhost:5000/update-product-info?productId=${productData._id}&&imagePath=${productData.productImage}`,formData)
         .then((response) => {
-            if(response.data.insertedId) {
+            if(response.data.modifiedCount) {
                 swal({
                     icon: 'success',
                     text: 'Successfully updated Product Info',
                     button: 'ok',
-                });
-                e.target.reset();
+                })
+                .then(() => {
+                    navigate('/dashboard/manage-all-products', {
+                        replace: true,
+                    })
+                })                
             }
         })
-        .catch(() => {
+        .catch((error) => {
             swal({
                 icon: 'error',
                 text: 'Something went wrong Please Reload update Try Again',
                 button: 'ok',
             })
+            console.log(error.message)
         })
         
     }

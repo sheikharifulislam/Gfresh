@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import CircularLoader from '../../customComponent/circularLoader/CircularLoader';
 import  './productDetails.css';
 
 const ProductDetails = () => {
@@ -29,7 +30,7 @@ const ProductDetails = () => {
     
 
     useEffect(() => {
-        axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productId=${productId}`)
+        axios.get(`http://localhost:5000/all-products?productId=${productId}`)
         .then((response) => {
             setSingleProduct(response.data);                                      
         })
@@ -50,7 +51,7 @@ const ProductDetails = () => {
                <div className="product-details-container">
                     <section id="product-details-image-section">
                         <div className="product-details-image">
-                            <img src={`https://arcane-lake-20041.herokuapp.com/${singleProduct.productImage}`} alt={singleProduct.inTheBox} />
+                            <img src={`http://localhost:5000/${singleProduct.productImage}`} alt={singleProduct.inTheBox} />
                         </div>
                     </section>
                     <section id="product-details-section">
@@ -181,6 +182,10 @@ const ProductDetails = () => {
                     </section>
                 }
             </div>
+            {
+                Object.keys(singleProduct).length === 1 &&
+                <CircularLoader height="80vh" />
+            }
         </section>
     );
 };

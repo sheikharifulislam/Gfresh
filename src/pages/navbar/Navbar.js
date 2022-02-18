@@ -4,7 +4,6 @@ import {FirebaseContext} from '../../context/FirebaseProvider';
 import './navbar.css';
 
 const Navbar = () => {
-    
     const [searchData, setSearchData] = useState({
         search: '',
     });
@@ -12,7 +11,9 @@ const Navbar = () => {
     const acountOption = useRef(null);
     const navigate = useNavigate();
     const location = useLocation();
-    const {user,logOut} = useContext(FirebaseContext);      
+    const {user,logOut} = useContext(FirebaseContext);    
+    
+    if(location.pathname.includes('dashboard')) return null;
 
     const toggleSearchBox = () => {
         searchForm.current.classList.toggle('active-search-form');
@@ -21,7 +22,7 @@ const Navbar = () => {
     const handleAcountBtn = () => {
         acountOption.current.classList.toggle('active-login-logout-and-other');
         searchForm.current.classList.remove('active-search-form');
-    }     
+    }
 
     const handleSearchBox = (e) => {
        const field = e.target.name;

@@ -12,10 +12,10 @@ const CheckoutForm = ({singleProduct, orderData}) => {
     const [clientSecret, setClientSecret] = useState('');
     const {user} = useContext(FirebaseContext);
     const navigate = useNavigate();
-    const [paymentProcessing, serPaymentProcessing] = useState(false);
+    const [paymentProcessing, serPaymentProcessing] = useState(false);   
 
     useEffect(() => {
-      axios.post(`https://arcane-lake-20041.herokuapp.com/create-payment-intent`,{
+      axios.post(`http://localhost:5000/create-payment-intent`,{
         amount: singleProduct.offerPrice,
         quantity: orderData.orderQuantity,
       })
@@ -79,14 +79,18 @@ const CheckoutForm = ({singleProduct, orderData}) => {
             ...singleProduct,
           },          
           orderInfo: {
-            ...orderData,
-            ordateDate: new Date().toLocaleDateString(),
+            ...orderData,            
             orderStatus: 'pending',
           },
           userInfo: {
             userEmail: user.email,
+            userName: user.displayName,
           }
         }
+        let date = new Date().toLocaleDateString();
+        date = date.split('/');
+        let formateDate = `${date[1]}/${date[0]}/${date[2]}`;
+        newOrderData.orderInfo.orderDate = formateDate;
         delete newOrderData._id;
         delete newOrderData.orderInfo.productId;
         delete newOrderData.quantity;

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TableCell from '@mui/material/TableCell';
 import {Button} from '@mui/material';
 import TableRow from '@mui/material/TableRow';
@@ -18,15 +18,13 @@ const ManageAllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);
     const [totalPage, setTotalPage] = useState(0);
     const [currentPage, setCurrentPage] = useState(0);
-    const [dataLoading, setDataLoading] = useState(true);
-    const childRef = useRef(null);
-    // const childDeleteRef = useRef(false);
+    const [dataLoading, setDataLoading] = useState(true);  
     const navigate = useNavigate()  
     const size = 15;
 
     useEffect(() => {
         setDataLoading(true);
-        axios.get(`https://arcane-lake-20041.herokuapp.com/manage-all-products?currentPage=${currentPage}&&size=${size}`)
+        axios.get(`http://localhost:5000/manage-all-products?currentPage=${currentPage}&&size=${size}`)
         .then((response) => {
             setAllProducts(response.data.allProducts);            
             const totalPageNumber = Math.ceil(response.data.count / size);
@@ -46,25 +44,25 @@ const ManageAllProducts = () => {
         })
     }, [currentPage]);
 
-    if(dataLoading)return <CircularLoader height="900px" />
+    if(dataLoading)return <CircularLoader height="95vh" />
 
-    const handleProductDelete = (id,imagePath) => {             
+    const handleProductDelete = (e,id,imagePath) => {             
         swal({
             text: 'Are You Sure You Want To Delete The Product ?',
             buttons: ['Cancle', 'Sure']
         })
         .then((value) => {
             if(value) {
-                axios.delete(`https://arcane-lake-20041.herokuapp.com/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
+                axios.delete(`http://localhost:5000/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
                 .then((response) => {
                    if(response.data.deletedCount) {
                        swal({
                            icon: 'success',
                            text: 'Succefully Delete the Product',
                            button: 'ok',
-                       })   
-                                           
-                       childRef.current.parentElement.parentElement.remove();
+                       })
+                       e.target.parentElement.parentElement.remove();                                    
+                       
                     }
                 })
                 .catch(() => {
@@ -134,9 +132,7 @@ const ManageAllProducts = () => {
                                         color: '#f5f5f5',
                                         }}
                                         variant="outlined"
-                                        onClick={() => handleProductDelete(data._id, data.productImage)}                                       
-                                        ref={childRef}
-                                        >
+                                        onClick={(e) => handleProductDelete(e,data._id, data.productImage)}>
                                             Delete
                                     </Button>                        
                                 </TableCell>                            

@@ -1,7 +1,6 @@
 #header-slider {
   width: 100%;
   height: 520px;
-  padding-top: 80px;
   margin-top: 84px;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,6 +17,7 @@
   -moz-transition: 1s;
   -ms-transition: 1s;
   -o-transition: 1s;
+  padding-top: 80px;
 }
 
 .slide {

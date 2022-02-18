@@ -25,7 +25,7 @@ const AddProduct = () => {
             formData.append(key, productData[key]);
         }
         formData.append("productImage",file);
-        axios.post(`https://arcane-lake-20041.herokuapp.com/add-product`,formData)
+        axios.post(`http://localhost:5000/add-product`,formData)
         .then((response) => {
             if(response.data.insertedId) {
                 swal({
@@ -51,7 +51,7 @@ const AddProduct = () => {
           <div className="add-new-product-section-title">
                 <h2>Add New Product</h2>
                 <div className="add-product-container">
-                    <form onSubmit={handleSubmit} enctype="multipart/form-data">
+                    <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="add-product-area">
                             <div className="add-product-form-design">
                                 <label htmlFor="product-name">Product Name</label>

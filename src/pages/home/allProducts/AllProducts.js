@@ -3,15 +3,23 @@ import React, { useEffect, useState } from 'react';
 import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './allProducts.css';
+import swal from 'sweetalert';
 
 const AllProducts = () => {
 
     const [allProductData, setAllProductData] = useState([]);
 
     useEffect(() => {
-        axios.get('https://arcane-lake-20041.herokuapp.com/all-products')
+        axios.get('http://localhost:5000/all-products')
         .then((data) => setAllProductData(data.data))
-        .catch((error) => console.log(error.message))
+        .catch(() => {
+            swal({
+                icon: 'error',
+                text: 'Something went wrong Please Reload Try Again',
+                buttons: 'ok',
+            })
+        })
+        
     }, []); 
 
     
@@ -36,4 +44,4 @@ const AllProducts = () => {
     );
 };
 
-export default AllProducts;
+export default React.memo(AllProducts);

@@ -22,6 +22,9 @@ import DashboardHome from "./pages/dashboard/dashboradHome/DashboardHome";
 import AddProduct from "./pages/dashboard/addProduct/AddProduct";
 import ManageAllProducts from "./pages/dashboard/manageAllProducts/ManageAllProducts";
 import UpdateProductInfo from "./pages/dashboard/updateProductInfo/UpdateProductInfo";
+import ManageAllOrders from "./pages/dashboard/manageAllOrders/ManageAllOrders";
+import ManagePendingOrders from "./pages/dashboard/managePendingOrders/ManagePendingOrders";
+import MyAllOrders from "./pages/dashboard/myAllOrders/MyAllOrders";
 
 
 function App() {
@@ -47,6 +50,9 @@ function App() {
                 <Route path="add-product" element={<AddProduct/>} />
                 <Route path="manage-all-products" element={<ManageAllProducts/>} />
                 <Route path="update-product-info/:productId" element={<UpdateProductInfo/>} />
+                <Route path="all-orders" element={<ManageAllOrders/>} />
+                <Route path="pending-orders" element={<ManagePendingOrders/>} />
+                <Route path="my-all-orders" element={<MyAllOrders/>} />
             </Route>
           </Routes>
           <Footer/>

@@ -49,13 +49,16 @@ const Dashboard = (props) => {
                         <NavLink to="add-product">Add Product</NavLink>
                     </li>               
                     <li>
-                        <NavLink to="all-orders">All Orders</NavLink>
+                        <NavLink to="all-orders">Manage All Orders</NavLink>
                     </li>
                     <li>
                         <NavLink to="manage-all-products">Manage All Products</NavLink>
                     </li>
                     <li>
                         <NavLink to="pending-orders">Pending Orders</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="my-all-orders">My All Orders</NavLink>
                     </li>
                     <li>
                         <NavLink to="all-reviews">All Reviews</NavLink>

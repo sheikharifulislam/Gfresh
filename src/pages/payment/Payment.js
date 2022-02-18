@@ -13,7 +13,7 @@ const Payment = () => {
     const [singleProduct, setSingleProduct] = useState({});
    
     useEffect(() => {
-        axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productId=${orderData.productId}`)
+        axios.get(`http://localhost:5000/all-products?productId=${orderData.productId}`)
         .then((response) => {
             setSingleProduct(response.data);
         })
