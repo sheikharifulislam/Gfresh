@@ -3,17 +3,20 @@ import { getAuth, createUserWithEmailAndPassword,updateProfile,signInWithEmailAn
 import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import firebaseInitialize from "../firebase/firebase.initialize";
+import baseurl from '../utilis/baseurl';
 
 firebaseInitialize();
 
 const useFirebase = () => {
 
     const [user, setUser] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
-    const [admin, setAdmin] = useState({});    
+    const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState({});
+    const [adminIsLoading, setAdminIsLoading] = useState(true);    
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    const baseUrl = baseurl();
 
     const updateNavigate = (navigate,location) => {
         const redirect = location?.state?.form || '/home';
@@ -148,39 +151,38 @@ const useFirebase = () => {
             mobileNumber,
         }
 
-        axios.post('https://arcane-lake-20041.herokuapp.com/add-user',user);
+        axios.post(`${baseUrl}user/add-user`,user);
         
     }
     
     useEffect(() => {
         setIsLoading(true);
-        const unsubscribe = onAuthStateChanged(auth,(user) => {
-            if(user) {
-                setUser(user);
+        const unsubscribe = onAuthStateChanged(auth,(currentuser) => {
+            if(currentuser) {
+                setUser(currentuser);
             }
             else {
                 setUser({});
             }
-            setIsLoading(false);
-
-            return unsubscribe;
+            setIsLoading(false);            
         })
+        return unsubscribe;
     },[auth]);
 
     useEffect(() => {
-        setIsLoading(true);
-        axios.get(`https://arcane-lake-20041.herokuapp.com/check-admin?userEmail=${user?.email}`)
+        setAdminIsLoading(true);
+        axios.get(`${baseUrl}user/check-admin?userEmail=${user?.email}`)
         .then((response) => {
-            setAdmin(response.data);
-            setIsLoading(false);
+            setAdmin(response.data);                
+            setAdminIsLoading(false);
         })
         .catch((error) => {
             console.log(error.message);
         })
         .finally(() => {
-            setIsLoading(false);
+            setAdminIsLoading(false);
         })
-    }, [user.email])
+    }, [user.email,baseUrl])
 
     return {
         registration,
@@ -189,6 +191,7 @@ const useFirebase = () => {
         logOut,
         user,
         isLoading,
+        adminIsLoading,
         admin,       
     }
 }

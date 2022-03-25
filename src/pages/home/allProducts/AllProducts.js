@@ -4,13 +4,16 @@ import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './allProducts.css';
 import swal from 'sweetalert';
+import baseurl from '../../../utilis/baseurl';
+
 
 const AllProducts = () => {
 
     const [allProductData, setAllProductData] = useState([]);
+    const baseUrl = baseurl()
 
     useEffect(() => {
-        axios.get('http://localhost:5000/all-products')
+        axios.get(`${baseUrl}products/all-products`)
         .then((data) => setAllProductData(data.data))
         .catch(() => {
             swal({
@@ -20,7 +23,7 @@ const AllProducts = () => {
             })
         })
         
-    }, []); 
+    }, [baseUrl]); 
 
     
 

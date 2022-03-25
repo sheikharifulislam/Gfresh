@@ -5,13 +5,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import CircularLoader from '../../customComponent/circularLoader/CircularLoader';
 import  './productDetails.css';
+import baseurl from '../../utilis/baseurl';
 
 const ProductDetails = () => {
 
     const {productId} = useParams();
     const navigate = useNavigate();
     const [singleProduct, setSingleProduct] = useState({});
-    const [productQuantiy, setProductQuantity] = useState("");   
+    const [productQuantiy, setProductQuantity] = useState(""); 
+    const baseUrl  = baseurl();
+   
     
     
     const handleProductQuantityForm = e => {
@@ -30,7 +33,7 @@ const ProductDetails = () => {
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/all-products?productId=${productId}`)
+        axios.get(`${baseUrl}products/all-products?productId=${productId}`)
         .then((response) => {
             setSingleProduct(response.data);                                      
         })
@@ -43,7 +46,7 @@ const ProductDetails = () => {
                   });
             }
         })
-    },[productId])
+    },[productId,baseUrl])
 
     return (
         <section id="product-details-page">
@@ -51,7 +54,7 @@ const ProductDetails = () => {
                <div className="product-details-container">
                     <section id="product-details-image-section">
                         <div className="product-details-image">
-                            <img src={`http://localhost:5000/${singleProduct.productImage}`} alt={singleProduct.inTheBox} />
+                            <img src={`${baseUrl}${singleProduct.productImage}`} alt={singleProduct.inTheBox} />
                         </div>
                     </section>
                     <section id="product-details-section">

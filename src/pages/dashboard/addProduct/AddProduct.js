@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import axios from 'axios';
 import './addProduct.css';
 import swal from 'sweetalert';
+import baseurl from '../../../utilis/baseurl'; 
 
 const AddProduct = () => {
     
@@ -9,6 +10,7 @@ const AddProduct = () => {
         offerPrice: null,
     });
     const [file, setFile] = useState(null);
+    const baseUrl = baseurl();
 
     const handleInput = e => {
         const key = e.target.name;
@@ -25,7 +27,7 @@ const AddProduct = () => {
             formData.append(key, productData[key]);
         }
         formData.append("productImage",file);
-        axios.post(`http://localhost:5000/add-product`,formData)
+        axios.post(`${baseUrl}products/add-product`,formData)
         .then((response) => {
             if(response.data.insertedId) {
                 swal({

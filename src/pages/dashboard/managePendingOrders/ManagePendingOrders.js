@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 import swal from 'sweetalert';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
-import { useNavigate } from 'react-router-dom';;
+import baseurl from '../../../utilis/baseurl';
 
 const ManagePendingOrders = () => {
 
@@ -19,9 +19,10 @@ const ManagePendingOrders = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [dataLoading, setDataLoading] = useState(true);  
     const size = 15; 
+    const baseUrl = baseurl();
     useEffect(() => {
         setDataLoading(true);
-        axios.get(`http://localhost:5000/all-orders?currentPage=${currentPage}&&size=${size}&&orderStatus=pending`)
+        axios.get(`${baseUrl}orders/all-orders?currentPage=${currentPage}&&size=${size}&&orderStatus=pending`)
         .then((response) => {
             setAllPendingOrders(response.data.allOrders);                     
             const totalPageNumber = Math.ceil(response.data.count / size);
@@ -39,7 +40,7 @@ const ManagePendingOrders = () => {
         .finally(() => {
             setDataLoading(false);
         })
-    }, [currentPage]);
+    }, [currentPage,baseUrl]);
 
     if(dataLoading)return <CircularLoader height="95vh" />
 
@@ -50,7 +51,7 @@ const ManagePendingOrders = () => {
         })
         .then((value) => {
             if(value) {
-                axios.patch(`http://localhost:5000/update-order-status?orderId=${id}`,{updateStatus: `${status.toLowerCase()}`})
+                axios.patch(`${baseUrl}orders/update-order-status?orderId=${id}`,{updateStatus: `${status.toLowerCase()}`})
                 .then((response) => {                   
                    if(response.data.modifiedCount) {
                        const updateOrderData = [...allPendingOrders];

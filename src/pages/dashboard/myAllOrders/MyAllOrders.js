@@ -11,7 +11,8 @@ import Paper from '@mui/material/Paper';
 import swal from 'sweetalert';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import {FirebaseContext} from '../../../context/FirebaseProvider';
-import { useNavigate } from 'react-router-dom';;
+import { useNavigate } from 'react-router-dom';
+import baseurl from '../../../utilis/baseurl';
 
 const MyAllOrders = () => {
 
@@ -22,10 +23,11 @@ const MyAllOrders = () => {
     const {user} = useContext(FirebaseContext);  
     const navigate = useNavigate();
     const size = 15; 
+    const baseUrl = baseurl();
     useEffect(() => {
         setDataLoading(true);
         if(user.email !== undefined) {
-            axios.get(`http://localhost:5000/all-orders?currentPage=${currentPage}&&size=${size}&&userEmail=${user.email}`)
+            axios.get(`${baseUrl}orders/all-orders?currentPage=${currentPage}&&size=${size}&&userEmail=${user.email}`)
             .then((response) => {
                 setMyAllOrders(response.data.allOrders);                     
                 const totalPageNumber = Math.ceil(response.data.count / size);
@@ -44,7 +46,7 @@ const MyAllOrders = () => {
                 setDataLoading(false);
             })
         }
-    }, [currentPage,user.email]);
+    }, [currentPage,user.email,baseUrl]);
 
     if(dataLoading)return <CircularLoader height="95vh" />
 
@@ -55,7 +57,7 @@ const MyAllOrders = () => {
         })
         .then((value) => {
             if(value) {
-                axios.patch(`http://localhost:5000/update-order-status?orderId=${id}`,{updateStatus: `${status.toLowerCase()}`})
+                axios.patch(`${baseUrl}baseUrl/update-order-status?orderId=${id}`,{updateStatus: `${status.toLowerCase()}`})
                 .then((response) => {                   
                    if(response.data.modifiedCount) {
                        const updateOrderData = [...myAllOrders];
@@ -150,18 +152,7 @@ const MyAllOrders = () => {
                                         >                                   
                                             {
                                                 data.orderInfo.orderStatus === 'pending' &&
-                                                    <Box>
-                                                        <Button style={{
-                                                            textAlign: 'right',
-                                                            backgroundColor: 'green',
-                                                            color: '#f5f5f5',
-                                                            marginRight: '4px',
-                                                            fontSize: '10px'
-                                                            }}
-                                                            onClick={() => handleOrderStatus(data._id, 'Confirm')}
-                                                            >
-                                                                Confirm
-                                                        </Button>
+                                                    <Box>                                                        
                                                         <Button style={{
                                                             textAlign: 'right',
                                                             backgroundColor: 'red',

@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
-import useFirebase from '../customHooks/useFirebase';
+import { FirebaseContext } from '../context/FirebaseProvider';
 import CircularLoader from '../customComponent/circularLoader/CircularLoader';
 
 const AdminPrivateRoute = ({children}) => {
-    const {admin, isLoading} = useFirebase();
+    const {admin, adminIsLoading} = useContext(FirebaseContext);
     const location = useLocation();
+    console.log(adminIsLoading)
+   
 
-    if(isLoading) {
+    if(adminIsLoading) {
         return <CircularLoader/>
     }
 
-    if(!admin.isAdmin) {
+    if(!admin?.isAdmin) {
         return <Navigate to="/login" state={{from: location}} replace />
     }
 

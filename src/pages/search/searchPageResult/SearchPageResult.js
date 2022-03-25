@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import './searchPageResult.css';
+import baseurl from '../../../utilis/baseurl';
 
 const SearchPageResult = () => {
 
@@ -11,12 +12,13 @@ const SearchPageResult = () => {
     const [data, setData] = useState([]);
     const [searchParams] = useSearchParams()
     const productName = searchParams.get('productName');
-    const categoryName = searchParams.get('category');      
+    const categoryName = searchParams.get('category'); 
+    const baseUrl = baseurl();     
 
     useEffect(() => {
 
         if(productName) {
-            axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?productName=${productName}`)
+            axios.get(`${baseUrl}products/all-products?productName=${productName}`)
             .then((response) => {
                 setData(response.data);
             })
@@ -30,7 +32,7 @@ const SearchPageResult = () => {
             })
         }
         else if(categoryName) {
-            axios.get(`https://arcane-lake-20041.herokuapp.com/all-products?category=${categoryName}`)
+            axios.get(`${baseUrl}products/all-products?category=${categoryName}`)
             .then((response) => {
                 setData(response.data);
             })
@@ -44,7 +46,7 @@ const SearchPageResult = () => {
             })
         }
         
-    }, [productName,categoryName]); 
+    }, [productName,categoryName,baseUrl]); 
 
     return (
         <section id="search-page-result">

@@ -5,6 +5,7 @@ import './checkout.css';
 import swal from 'sweetalert';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import baseurl from '../../../utilis/baseurl.js'; 
 
 const CheckoutForm = ({singleProduct, orderData}) => {
     const stripe = useStripe();
@@ -12,17 +13,18 @@ const CheckoutForm = ({singleProduct, orderData}) => {
     const [clientSecret, setClientSecret] = useState('');
     const {user} = useContext(FirebaseContext);
     const navigate = useNavigate();
-    const [paymentProcessing, serPaymentProcessing] = useState(false);   
+    const [paymentProcessing, serPaymentProcessing] = useState(false);
+    const baseUrl = baseurl();   
 
     useEffect(() => {
-      axios.post(`http://localhost:5000/create-payment-intent`,{
+      axios.post(`${baseUrl}payment/create-payment-intent`,{
         amount: singleProduct.offerPrice,
         quantity: orderData.orderQuantity,
       })
       .then((response) => {
         setClientSecret(response.data.clientSecret);
       })
-    }, [singleProduct.offerPrice, orderData.orderQuantity])
+    }, [singleProduct.offerPrice, orderData.orderQuantity,baseUrl])
    
 
     const handleSubmit = async (e) => {    
@@ -96,7 +98,7 @@ const CheckoutForm = ({singleProduct, orderData}) => {
         delete newOrderData.quantity;
 
         
-        axios.post(`http://localhost:5000/add-order?productId=${singleProduct._id}`,newOrderData)
+        axios.post(`${baseUrl}orders/add-order?productId=${singleProduct._id}`,newOrderData)
         .then((response) => {
           if(response.data.result.insertedId && response.data.updateProductQuantity.modifiedCount >= 1) {
             localStorage.removeItem('orderData');

@@ -3,15 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import './updateProductInfo.css';
+import baseurl from '../../../utilis/baseurl';
 
 const UpdateProductInfo = () => {
     const {productId} = useParams();
     const [productData, setProductData] = useState({});
     const [file, setFile] = useState(null);
     const navigate = useNavigate();
+    const baseUrl = baseurl();
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/all-products?productId=${productId}`)
+        axios.get(`${baseUrl}products/all-products?productId=${productId}`)
         .then((response) => {
             setProductData(response.data);            
         })
@@ -22,7 +24,7 @@ const UpdateProductInfo = () => {
                 button: 'ok',
             })           
         })
-    }, [productId])
+    }, [productId,baseUrl])
       
 
     const handleInput = e => {
@@ -40,7 +42,7 @@ const UpdateProductInfo = () => {
             formData.append(key, productData[key]);
         }
         formData.append("productImage",file);      
-        axios.patch(`http://localhost:5000/update-product-info?productId=${productData._id}&&imagePath=${productData.productImage}`,formData)
+        axios.patch(`${baseUrl}products/update-product-info?productId=${productData._id}&&imagePath=${productData.productImage}`,formData)
         .then((response) => {
             if(response.data.modifiedCount) {
                 swal({

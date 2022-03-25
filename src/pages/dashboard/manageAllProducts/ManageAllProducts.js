@@ -12,6 +12,7 @@ import swal from 'sweetalert';
 import './manageAllProduct.css';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import { useNavigate } from 'react-router-dom';
+import baseurl from '../../../utilis/baseurl';
 
 const ManageAllProducts = () => {
 
@@ -21,10 +22,11 @@ const ManageAllProducts = () => {
     const [dataLoading, setDataLoading] = useState(true);  
     const navigate = useNavigate()  
     const size = 15;
+    const baseUrl = baseurl();
 
     useEffect(() => {
         setDataLoading(true);
-        axios.get(`http://localhost:5000/manage-all-products?currentPage=${currentPage}&&size=${size}`)
+        axios.get(`${baseUrl}products/manage-all-products?currentPage=${currentPage}&&size=${size}`)
         .then((response) => {
             setAllProducts(response.data.allProducts);            
             const totalPageNumber = Math.ceil(response.data.count / size);
@@ -42,7 +44,7 @@ const ManageAllProducts = () => {
         .finally(() => {
             setDataLoading(false);
         })
-    }, [currentPage]);
+    }, [currentPage,baseUrl]);
 
     if(dataLoading)return <CircularLoader height="95vh" />
 
@@ -53,7 +55,7 @@ const ManageAllProducts = () => {
         })
         .then((value) => {
             if(value) {
-                axios.delete(`http://localhost:5000/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
+                axios.delete(`${baseUrl}products/delete-single-product?productId=${id}&&imagePath=${imagePath}`)
                 .then((response) => {
                    if(response.data.deletedCount) {
                        swal({

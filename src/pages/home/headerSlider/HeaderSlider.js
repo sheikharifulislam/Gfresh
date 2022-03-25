@@ -2,12 +2,14 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './headerSlider.css';
+import baseurl from '../../../utilis/baseurl';
 
 const HeaderSlider = () => {
 
     const [sliderData, setSlidetData] = useState([]);
     const [count, setCount] = useState(0);
     const timeOutRef = useRef(null)
+    const baseUrl = baseurl();
     
     const resetTimeout = () => {
         if(timeOutRef.current) {
@@ -16,10 +18,10 @@ const HeaderSlider = () => {
     }
 
     useEffect(() => {
-        axios.get('https://arcane-lake-20041.herokuapp.com/slider-data')
+        axios.get(`${baseUrl}slider/get-slider`)
         .then((data) => setSlidetData(data.data))
         .catch((error) => console.log(error.message))
-    },[]);
+    },[baseUrl]);
 
     useEffect(() => {
         resetTimeout();    
@@ -58,7 +60,7 @@ const HeaderSlider = () => {
                                             <button>Shop Now</button>
                                         </div>
                                         <div className="slide-image">
-                                            <img src={`https://arcane-lake-20041.herokuapp.com/${data.sliderImage}`} alt="current offer slider thumbnail" />
+                                            <img src={`${baseUrl}${data.sliderImage}`} alt="current offer slider thumbnail" />
                                         </div>
                                     </div>
                                 </div>
