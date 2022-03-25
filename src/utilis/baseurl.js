@@ -1,5 +1,5 @@
 const baseUlr = () => {
-    return `http://localhost:5000/`;
+    return `https://infinite-wave-51618.herokuapp.com/`;
 }
 
 export default baseUlr;
