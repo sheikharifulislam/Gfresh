@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import Paper from '@mui/material/Paper';
 import swal from 'sweetalert';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const ManagePendingOrders = () => {
 

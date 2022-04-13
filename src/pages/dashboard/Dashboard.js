@@ -14,6 +14,7 @@ import {NavLink, useLocation, useNavigate} from 'react-router-dom';
 import {Outlet} from 'react-router-dom';
 import {FirebaseContext} from '../../context/FirebaseProvider';
 import './dashboard.css';
+import useLoadUserData from '../../customHooks/loadUserData';
 
 
 const drawerWidth = 240;
@@ -21,7 +22,8 @@ const drawerWidth = 240;
 const Dashboard = (props) => {
     const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const {logOut} = useContext(FirebaseContext);
+  const {logOut,user} = useContext(FirebaseContext);
+  const userData = useLoadUserData(user.email); 
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -68,6 +70,9 @@ const Dashboard = (props) => {
                     </li> 
                     <li>
                         <NavLink to="add-new-admin">Add Admin</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={`profile?userId=${userData._id}`}>My Profile</NavLink>
                     </li>
                     <li onClick={() => handleLogout(navigate,location)}>Log Out</li>                 
               </ul>

@@ -5,7 +5,7 @@ import './checkout.css';
 import swal from 'sweetalert';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import baseurl from '../../../utilis/baseurl.js'; 
+import baseurl from '../../../utils/baseurl.js'; 
 
 const CheckoutForm = ({singleProduct, orderData}) => {
     const stripe = useStripe();

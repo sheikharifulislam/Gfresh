@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import './updateProductInfo.css';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const UpdateProductInfo = () => {
     const {productId} = useParams();

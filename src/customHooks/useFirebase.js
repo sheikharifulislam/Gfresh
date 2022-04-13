@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword,updateProfile,signInWithEmailAn
 import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import firebaseInitialize from "../firebase/firebase.initialize";
-import baseurl from '../utilis/baseurl';
+import baseurl from '../utils/baseurl';
 
 firebaseInitialize();
 
@@ -149,6 +149,8 @@ const useFirebase = () => {
             name,
             email,
             mobileNumber,
+            photoUrl: 'assets/userProfile.png',
+            role: 'admin',
         }
 
         axios.post(`${baseUrl}user/add-user`,user);

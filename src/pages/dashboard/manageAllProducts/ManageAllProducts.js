@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 import './manageAllProduct.css';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import { useNavigate } from 'react-router-dom';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const ManageAllProducts = () => {
 

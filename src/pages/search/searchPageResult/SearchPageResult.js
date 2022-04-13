@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import './searchPageResult.css';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const SearchPageResult = () => {
 

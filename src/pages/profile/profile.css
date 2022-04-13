@@ -1,0 +1,79 @@
+.profile-container {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid blue;
+    box-shadow: 0 0 50px #eee;
+    padding: 30px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.profile-container-title h1{
+    text-align: center;
+    font-size: 24px;
+    color: purple;
+    margin-bottom: 10px;
+}
+
+.profile-image-section {
+ width: 130px;
+ height: 130px;
+ margin: 0 auto;
+ border-radius: 50%;
+ -webkit-border-radius: 50%;
+ -moz-border-radius: 50%;
+ -ms-border-radius: 50%;
+ -o-border-radius: 50%;
+ border-top: 2px solid blue;
+ border-left: 2px solid maroon;
+ border-right: 2px solid rebeccapurple;
+ border-bottom: 2px solid green;
+}
+
+.profile-image-section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.profile-form {
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profile-form input {
+    display: block;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 0 10px 15px;
+    margin-top: 7px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#uploader {
+    position: relative;
+    top: -90px;
+    left: 86%;
+}
+
+.upload-icon {
+    font-size: 25px;
+    color: green;
+    background: fill;
+}
+
+#profile-pic-uploader {
+    display: none;
+}

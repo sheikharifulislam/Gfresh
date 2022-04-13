@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Rating, Stack } from '@mui/material';
 import './singleProduct.css';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const SingleProduct = ({product}) => {
 

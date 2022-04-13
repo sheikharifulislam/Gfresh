@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import CircularLoader from '../../customComponent/circularLoader/CircularLoader';
 import  './productDetails.css';
-import baseurl from '../../utilis/baseurl';
+import baseurl from '../../utils/baseurl';
 
 const ProductDetails = () => {
 

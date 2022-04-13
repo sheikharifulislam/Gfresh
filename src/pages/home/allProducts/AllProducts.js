@@ -4,7 +4,7 @@ import SingleProduct from '../../sharedComponent/singleProduct/SingleProduct';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './allProducts.css';
 import swal from 'sweetalert';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 
 const AllProducts = () => {

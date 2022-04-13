@@ -27,6 +27,7 @@ import ManagePendingOrders from "./pages/dashboard/managePendingOrders/ManagePen
 import MyAllOrders from "./pages/dashboard/myAllOrders/MyAllOrders";
 import UserPrivateRoute from './privateRoute/UserPrivateRoute';
 import AdminPrivateRoute from './privateRoute/AdminPrivateRoute';
+import Profile from "./pages/profile/Profile";
 
 
 function App() {
@@ -90,6 +91,11 @@ function App() {
                     <ManagePendingOrders/>
                   </AdminPrivateRoute>
                 } />
+                <Route path="profile" element={
+                    <UserPrivateRoute>
+                        <Profile/>
+                    </UserPrivateRoute>
+                }/>
                 <Route path="my-all-orders" element={<MyAllOrders/>} />
             </Route>
           </Routes>

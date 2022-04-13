@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import CircularLoader from '../../../customComponent/circularLoader/CircularLoader';
 import './headerSlider.css';
-import baseurl from '../../../utilis/baseurl';
+import baseurl from '../../../utils/baseurl';
 
 const HeaderSlider = () => {
 

@@ -4,7 +4,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './checkoutForm/CheckoutForm';
 import axios from 'axios';
 import swal from 'sweetalert';
-import baseurl from '../../utilis/baseurl';
+import baseurl from '../../utils/baseurl';
 
 const stripePromise = loadStripe('pk_test_51JxEmwFExVFWz35ALAJP7ja0wqSN0YNkunWjqBRq2EKgxWFwudBOcoMUbZq4ieWoX4fWm2aBWmNQG3sxtPykEcGR00unAeDLtf');
 
